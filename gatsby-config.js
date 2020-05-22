@@ -12,6 +12,7 @@ require('dotenv').config({
   path: `.env`,
 })
 
+const web_url = new String(process.env.HUMANS_LOCATION)
 module.exports = {
   siteMetadata: {
     siteUrl: `${site.url}/`,
@@ -38,7 +39,7 @@ module.exports = {
     feedUrl: site.feedUrl,
 
     // Site config
-    copyrights: `&copy; 2004&mdash;${new Date().getFullYear()} <a href="https://mademistakes.com/humans.txt">Michael Rose</a>. Some Rights Reserved.<br />Built in Buffalo, New York. (<a href="https://github.com/mmistakes/made-mistakes-gatsby" rel="nofollow">view source</a>)`,
+    copyrights: `&copy; 2020&mdash;${new Date().getFullYear()} <a href=${web_url}/humans.txt>Se&aacute;n&nbsp;Martin</a>. Some Rights Reserved.<br />Built in Dublin, Ireland. (<a href="https://github.com/seankmartin/made-mistakes-gatsby" rel="nofollow">view source</a>)`,
     defaultTheme: 'light',
     postsPerPage: 10,
     mainMenu: [
