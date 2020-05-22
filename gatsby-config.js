@@ -9,7 +9,7 @@ const cssnano = require('cssnano')
 const site = require('./config/site')
 
 require('dotenv').config({
-  path: `.env.${process.env.NODE_ENV}`,
+  path: `.env`,
 })
 
 module.exports = {
@@ -90,7 +90,7 @@ module.exports = {
     {
       resolve: `gatsby-source-github-api`,
       options: {
-        token: process.env.GITHUB_API_TOKEN,
+        token: String(process.env.GITHUB_API_TOKEN),
         graphQLQuery: site.githubApiQuery,
         variables: site.githubApiVariables,
       },
@@ -376,9 +376,9 @@ module.exports = {
                 const permalink = site.siteMetadata.siteUrl + path
                 const imageElement = image
                   ? `<p><img src="${
-                      site.siteMetadata.siteUrl +
-                      image.childImageSharp.fixed.src
-                    }" alt=""></p>`
+                  site.siteMetadata.siteUrl +
+                  image.childImageSharp.fixed.src
+                  }" alt=""></p>`
                   : ``
                 let mainContent = html
                 // Hacky workaround for relative paths https://github.com/gaearon/overreacted.io/issues/65
@@ -399,9 +399,9 @@ module.exports = {
                   .replace(/data-srcset=/g, 'srcset=')
                 const footerContent = `<p><a href="${
                   site.siteMetadata.siteUrl + edge.node.frontmatter.path
-                }">${
+                  }">${
                   edge.node.frontmatter.title
-                }</a> was originally published on Made Mistakes.</p>`
+                  }</a> was originally published on Made Mistakes.</p>`
 
                 return Object.assign({}, edge.node.frontmatter, {
                   title,
