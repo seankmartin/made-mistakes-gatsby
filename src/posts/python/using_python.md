@@ -47,20 +47,20 @@ To perform linting in Python, there are many good options, such as flake8, pylin
 
 Finally, I suggest running pydocstyle and docformatter to get your docstrings in check!
 
-The general format is like this, shown here for autopep8 and flake8, with docformatter, and pydocstyle.
+The general format is like this, shown here for yapf and flake8, with docformatter, and pydocstyle. Usually `-r` indicates recursive, `-i` indicates in place, and any of these can be run with the `-h` flag to get more information. Furthermore, most of these can be integrated into a code editor.
 
 ```Shell
-python -m pip install autopep8 flake8 docformatter pydocstyle
+python -m pip install yapf flake8 docformatter pydocstyle
 export my_code_file_or_directory=var
 python -m autopep8 $my_code_file_or_directory -r -i
+python -m docformatter $my_code_file_or_directory -r -i --blank --pre-summary-newline
 python -m flake8 $my_code_file_or_directory
-python -m docformatter $my_code_file_or_directory -r
 python -m pydocstyle $my_code_file_or_directory
 ```
 
 For example, this code does not look great:
 ```Python
-"""Let's all write some really ugly python - we can start off with a line that is just way too long."""
+"""Let's all write some really ugly python. We can start off with a line that is just way too long."""
 
 import numpy as np
 import matplotlib.pyplot as plt
@@ -97,55 +97,103 @@ if __name__ == "__main__":
 		print("Sorry I didn\'t get {}, leaving!".format(user_inp))
 ```
 Lets run formatting and linting!
-After autopep8 the output is:
+After running yapf and docformatter, the output is:
 ```Python
-"""Let's all write some really ugly python - we can start off with a line that is just way too long."""
+"""
+Let's all write some really ugly python.
+
+We can start off with a line that is just way too long.
+
+"""
 
 import numpy as np
 import matplotlib.pyplot as plt
 from math import ceil, floor
+from pprint import pformat
 
 
 def main():
-	"""This calculates some mad stuff.
+    """
+    This calculates some mad stuff.
 
-	Parameters
-	----------
-	None
+    Parameters
+    ----------
+    None
 
-	Returns
-	-------
-	tuple (list, int)
-	"""
-	foo = [((1+2 * 25) * i, 100) for i in range(0, 20) if i %
-	        2 == 0]  # Here is a helpful message to explain this madness
-	bar = ceil(foo[3] * 2)
-	return sorted(foo, key=lambda x: x[0] % x[1]), bar * bar + 10
+    Returns
+    -------
+    tuple (list, int)
+
+    """
+    foo = [((1 + 2 * 25) * i, 100) for i in range(0, 20)
+           if i % 2 == 0]  # Here is a helpful message to explain this madness
+    bar = ceil(foo[3][0] * 2)
+    return sorted(foo, key=lambda x: x[0] % x[1]), bar * bar + 10
 
 
 if __name__ == "__main__":
-	# If invoked as the main file, will call main()
-	result = main()
-	print("{} the output from the main was long, but here it is!".format(result)
-	user_inp=input("Would you like to see just how great that was again? (y/n)")
-	if user_inp == "":
-		print("Empty input, goodbye then!")
-	elif user_inp.lower() == "y":
-		print("That's great, let\'s go again!")
-	elif user_inp.lower() == "n":
-		print("Oh right, very well :(")
-	else:
-		print("Sorry I didn\'t get {}, leaving!".format(user_inp)
+    # If invoked as the main file, will call main()
+    result = main()
+    print("{}\nthe output from the main was long, but there it is!".format(
+        pformat(result)))
+    user_inp = input(
+        "Would you like to see just how great that was again? (y/n)\n")
+    if user_inp == "":
+        print("Empty input, goodbye then!")
+    elif user_inp.lower() == "y":
+        print("Too bad, good things only come once.")
+    elif user_inp.lower() == "n":
+        print("Oh right, very well :(")
+    else:
+        print("Sorry I didn't get {}, leaving!".format(user_inp))
+
+```
+
+Running linting and doc checking gives the following output
+```Shell
+➜  Temp python3 -m flake8 my_code   
+my_code/ugly_python.py:8:1: F401 'numpy as np' imported but unused
+my_code/ugly_python.py:9:1: F401 'matplotlib.pyplot as plt' imported but unused
+my_code/ugly_python.py:10:1: F401 'math.floor' imported but unused
+➜  Temp python3 -m pydocstyle my_code
+my_code/ugly_python.py:15 in public function `main`:
+        D401: First line should be in imperative mood; try rephrasing (found 'This')
 ```
 
 ## Testing
+Here describe pytest (or otherwise) basically.
+
 
 ## Continuous integration
+Here describe circleCI and maybe github hooks.
 
 ## Creating a Read the Docs website
-
+I'm not actually sure how to do this yet, I've been using pdoc3 to make things very simple, which is a good alternative for simplicity.
+However, will describe this when it is set up!
 
 ## Uploading your package to PyPI
+Your code is pretty, your code has tests, and your code has documentation, what next?
+
+You will need to have a `setup.py` file and a `setup.cfg` file.
+It is also recommended to have a `README.md` or `README.rst` file and a `LICENSE` file.
+Examples of all these are available on my github TODO provide link to my template python.
+
+
+To upload to PyPI, make an account on PyPI, and then follow these steps:
+```Shell
+python -m pip install --upgrade setuptools
+python -m pip install --upgrade twine
+rm -rf dist 
+python setup.py sdist 
+twine check dist/* 
+twine upload dist/* -u USERNAME -p  PASSWORD --verbose 
+```
+
+## Building an executable
+So, your code has a GUI and you want to provide an executable - read on!
+Two main options, using TODO check its name, think it is pybuild or something, have the name around.
+The other one is to use the fbs build system, which is actually very nice.
 
 ## Further reading
 1. [A more in depth guide to flake8](https://medium.com/python-pandemonium/what-is-flake8-and-why-we-should-use-it-b89bd78073f2)
+2. [A more in depth guide to PyPI packaging](https://medium.com/@joel.barmettler/how-to-upload-your-python-package-to-pypi-65edc5fe9c56)
