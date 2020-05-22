@@ -31,7 +31,7 @@ const HomePage = ({ data }) => {
           <h1 className={style.heading}>
             <span>
               Made Mistakes is the personal site of{' '}
-              <a href="/about/">Michael&nbsp;Rose</a>.
+              <a href="/about/">Sean&nbsp;Martin</a>.
             </span>
           </h1>
           <div className={style.intro}>
@@ -148,14 +148,6 @@ const HomePage = ({ data }) => {
                   love letters to me.</p>"
                 />
               </li>
-              <li key="support">
-                <Entry
-                  key="support-home-link"
-                  title="Show your support"
-                  path="/support/"
-                  excerpt="<p>Give thanks for the free open source goodies I provide.</p>"
-                />
-              </li>
               <li key="faqs">
                 <Entry
                   key="faqs-home-link"
@@ -260,7 +252,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    aboutImage: file(relativePath: { eq: "michael-rose-glitched.jpg" }) {
+    aboutImage: file(relativePath: { eq: "profile.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 720, maxHeight: 480, quality: 75) {
           ...GatsbyImageSharpFluid_noBase64
