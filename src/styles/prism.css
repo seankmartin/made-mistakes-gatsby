@@ -6,6 +6,13 @@ https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+cli
  * @author Rose Pritchard
  */
 
+ /* This changes the style of the code type */
+ div.gatsby-highlight::before{
+   font-size: 0.55em;
+   position: absolute;
+   top: 0.1em;
+ }
+
 pre[class*='language-'] {
   width: 100%;
   color: #a9a9b3;
@@ -13,6 +20,7 @@ pre[class*='language-'] {
   font-family: var(--monospace-font);
   text-align: left;
   white-space: pre-wrap;
+  font-size: small;
 
   -moz-tab-size: 4;
   -o-tab-size: 4;

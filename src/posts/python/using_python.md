@@ -98,7 +98,7 @@ if __name__ == "__main__":
 ```
 Lets run formatting and linting!
 After running yapf and docformatter, the output is:
-```Python
+```Python{numberLines: true}
 """
 Let's all write some really ugly python.
 
@@ -150,7 +150,7 @@ if __name__ == "__main__":
 ```
 
 Running linting and doc checking gives the following output
-```Shell
+```bash
 ➜  Temp python3 -m flake8 my_code   
 my_code/ugly_python.py:8:1: F401 'numpy as np' imported but unused
 my_code/ugly_python.py:9:1: F401 'matplotlib.pyplot as plt' imported but unused
@@ -180,7 +180,7 @@ Examples of all these are available on my github TODO provide link to my templat
 
 
 To upload to PyPI, make an account on PyPI, and then follow these steps:
-```Shell
+```bash
 python -m pip install --upgrade setuptools
 python -m pip install --upgrade twine
 rm -rf dist 
@@ -193,8 +193,6 @@ twine upload dist/* -u USERNAME -p  PASSWORD --verbose
 So, your code has a GUI and you want to provide an executable - read on!
 Two main options, using TODO check its name, think it is pybuild or something, have the name around.
 The other one is to use the fbs build system, which is actually very nice.
-
-`gist:seankmartin/8c30b4fd312f1f68d3feaeb6c3c7093e#unzip_all_in_dir.bat`
 
 ## Further reading
 1. [A more in depth guide to flake8](https://medium.com/python-pandemonium/what-is-flake8-and-why-we-should-use-it-b89bd78073f2)
