@@ -194,6 +194,8 @@ So, your code has a GUI and you want to provide an executable - read on!
 Two main options, using TODO check its name, think it is pybuild or something, have the name around.
 The other one is to use the fbs build system, which is actually very nice.
 
+`gist:seankmartin/8c30b4fd312f1f68d3feaeb6c3c7093e#unzip_all_in_dir.bat`
+
 ## Further reading
 1. [A more in depth guide to flake8](https://medium.com/python-pandemonium/what-is-flake8-and-why-we-should-use-it-b89bd78073f2)
 2. [A more in depth guide to PyPI packaging](https://medium.com/@joel.barmettler/how-to-upload-your-python-package-to-pypi-65edc5fe9c56)

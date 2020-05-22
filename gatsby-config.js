@@ -248,6 +248,20 @@ module.exports = {
             },
           },
           {
+            resolve: "gatsby-remark-embed-gist",
+            options: {
+              // Optional:
+              maxWidth: 1100,
+
+              // the github handler whose gists are to be accessed
+              username: 'seankmartin',
+
+              // a flag indicating whether the github default gist css should be included or not
+              // default: true
+              includeDefaultCss: true
+            }
+          },
+          {
             resolve: 'gatsby-remark-prismjs',
             options: {
               classPrefix: 'language-',
