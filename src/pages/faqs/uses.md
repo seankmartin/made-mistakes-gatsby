@@ -43,13 +43,6 @@ If you're interested in the specifics of how the site is built I've made its [so
 - [**BitWarden**](https://bitwarden.com/) - password manager.
 - [**Backblaze**](https://secure.backblaze.com/r/014jkj) - cloud backups.
 
-<figure class="three-column">
-  <img src="../../images/iphone-home-screen-1.jpg" alt="my iPhone home screen apps">
-  <img src="../../images/iphone-home-screen-2.jpg" alt="iPhone apps I use screen shot">
-  <img src="../../images/iphone-home-screen-3.jpg" alt="more iPhone ass I use screen shot">
-  <figcaption><p>Wouldn&rsquo;t want to leave out the mobile apps I use, so here&rsquo;s my iPhone&rsquo;s home screen.</p></figcaption>
-</figure>
-
 ## Site stuff
 
 - Continuous integration and deployment via [**Travis CI**][travis-ci].

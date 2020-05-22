@@ -4,7 +4,7 @@ path: /about/
 date: 2016-08-26
 last_modified_at: 2020-01-16T12:15:53-05:00
 excerpt: "Michael Rose is just another boring, tattooed, time traveling designer from Buffalo New York."
-image: ../images/about-michael-collage-2016.jpg
+image: ../images/profile.jpg
 ---
 
 Oh hey --- I'm Michael Rose, just another boring, tattooed, time traveling designer from Buffalo, New York.
@@ -17,16 +17,16 @@ And if that wasn't enough to keep me busy --- I'm also the father of [twin girls
 
 <figure class="two-column">
   <a href="/paperfaces/mmistakes-2-portrait/">
-    <img src="../images/michael-rose-paper-portrait-sidebar.jpg" alt="Michael Rose iPad self portrait">
+    <img src="../images/presentation.jpg" alt="Michael Rose iPad self portrait">
   </a>
   <a href="/paperfaces/rosebuds-2-portrait/">
-    <img src="../images/paperfaces-rosebuds-2-900.jpg" alt="Everly and Chloe iPad Paper drawing">
+    <img src="../images/presentation.jpg" alt="Everly and Chloe iPad Paper drawing">
   </a>
   <figcaption>Self portrait and my 2 little rosebuds drawn with Paper for iOS.</figcaption>
 </figure>
 
 <figure>
-  <img src="../images/michael-rose-tattoos.png" alt="Michael Rose's tattoos">
+  <img src="../images/profile.jpg" alt="Michael Rose's tattoos">
   <figcaption>My tattoos are a mess of line and words. Don't ask me to explain them &mdash; because I can't.</figcaption>
 </figure>
 
