@@ -30,16 +30,16 @@ const HomePage = ({ data }) => {
         <div className={style.title}>
           <h1 className={style.heading}>
             <span>
-              Made Mistakes is the personal site of{' '}
-              <a href="/about/">Sean&nbsp;Martin</a>.
+              This is the personal site of{' '}
+              <a href="/about/">Se&aacute;n&nbsp;Martin</a>.
             </span>
           </h1>
           <div className={style.intro}>
             <p>
-              I'm just another boring, tattooed, time traveling designer from
-              Buffalo New York who enjoys eating chicken wings, sketching on an
-              iPad Pro, building with static site generators, and playing
-              Nintendo Switch.
+              I'm a boring mathematician and computer scientist, and am currently a PhD student in Trinity College's Institute of Neuroscience. I enjoy fumbling through video games, roleplaying in dungeons and dragons, attempting piano, and messing about with all kinds of code - I mostly blog about the latter.
+            </p>
+            <p>
+              This site is built with Gatsby and made possible by the GitHub source code very kindly shared by Michael Rose, go check out his website, <a href="https://mademistakes.com">Making Mistakes</a>.
             </p>
           </div>
           <Img
