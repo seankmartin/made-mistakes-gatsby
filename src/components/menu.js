@@ -12,7 +12,7 @@ const MainMenu = ({ mainMenu }) => {
       <Link
         to={menuItem.path}
         itemProp="url"
-        activeStyle={{ textDecoration: 'line-through' }}
+        activeStyle={{ textDecoration: 'underline' }}
         partiallyActive
       >
         {menuItem.title}
