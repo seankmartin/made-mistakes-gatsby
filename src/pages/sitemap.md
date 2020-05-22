@@ -20,7 +20,3 @@ A hierarchical breakdown of all the sections and pages found on the site. For yo
 ## [Articles](/articles/)
 
 ## [Notes](/notes/)
-
-## [Mastering Paper for iOS](/mastering-paper/)
-
-## [Portfolio work](/work/)

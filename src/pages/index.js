@@ -139,15 +139,6 @@ const HomePage = ({ data }) => {
                   and developed.</p>"
                 />
               </li>
-              <li key="mastering-paper">
-                <Entry
-                  key="mastering-paper-home-link"
-                  title="Mastering Paper"
-                  path="/mastering-paper/"
-                  excerpt="<p>Tutorials to help master the iOS drawing app&mdash;
-                Paper</p>"
-                />
-              </li>
               <li key="contact">
                 <Entry
                   key="contact-home-link"
