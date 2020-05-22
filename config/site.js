@@ -1,8 +1,9 @@
 module.exports = {
   // pathPrefix: '/', // Prefix for all links. If you deploy your site to example.com/portfolio your pathPrefix should be "portfolio"
-  title: 'Made Mistakes', // Navigation and site title
-  titleAlt: 'Made Mistakes', // Title for schema.org JSONLD
-  description: 'Personal website of designer Michael Rose (@mmistakes).',
+  // TODO setup the staticman API and the urls correctly
+  title: 'Sean K. Martin', // Navigation and site title
+  titleAlt: 'Sean K. Martin', // Title for schema.org JSONLD
+  description: 'Personal website',
   url: 'https://mademistakes.com', // Domain of your site. No trailing slash!
   siteLanguage: 'en', // Language Tag on <html> element
   image: {
@@ -22,20 +23,20 @@ module.exports = {
 
   // JSONLD / Manifest
   favicon: '/images/logo.png', // Used for manifest favicon generation
-  shortName: 'Made Mistakes', // shortname for manifest. MUST be shorter than 12 characters
+  shortName: 'SKM Logo', // shortname for manifest. MUST be shorter than 12 characters
   author: {
     // Author for schema.org JSONLD
-    name: 'Michael Rose',
+    name: 'Seán Kieran Martin',
     url: 'https://mademistakes.com',
   },
   themeColor: '#ffffff',
   backgroundColor: '#111111',
 
-  twitter: '@mmistakes', // Twitter username
-  twitterUrl: 'https://twitter.com/mmistakes',
-  facebook: 'Made Mistakes', // Facebook site name
-  githubUrl: 'https://github.com/mmistakes',
-  instagramUrl: 'https://www.instagram.com/mmistakes/',
+  twitter: '@SeanKieranM', // Twitter username
+  twitterUrl: 'https://twitter.com/seankieranm',
+  facebook: 'Sean Martin', // Facebook site name
+  githubUrl: 'https://github.com/seankmartin',
+  instagramUrl: 'https://www.instagram.com/i_bench_cows/',
   feedUrl: '/atom.xml',
   githubApiToken: process.env.GITHUB_API_TOKEN,
   githubApiQuery: `query ($number_of_repos: Int!) {
@@ -72,7 +73,7 @@ module.exports = {
     }
   }`,
   githubApiVariables: {
-    number_of_repos: 5,
+    number_of_repos: 4,
   },
   reCaptcha: {
     siteKey: '6LdRBykTAAAAAFB46MnIu6ixuxwu9W1ihFF8G60Q',

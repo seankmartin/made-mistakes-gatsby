@@ -12,7 +12,7 @@ require('dotenv').config({
   path: `.env`,
 })
 
-const web_url = new String(process.env.HUMANS_LOCATION)
+const web_url = new String(process.env.MY_SITE_URL)
 module.exports = {
   siteMetadata: {
     siteUrl: `${site.url}/`,
