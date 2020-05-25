@@ -216,7 +216,8 @@ apidoc_excluded_paths = ['tests']
 apidoc_separate_modules = True
 ```
 11. Choose a theme of your liking, setting the Sphinx config, for example `html_theme = 'sphinx_rtd_theme'` (this theme requires installation `python -m pip install sphinx_rtd_theme`)
-11. The next step is optional, and is only needed if you want to include your README on Read the Docs and that README is in Markdown format. Install m2r if your README file is not in RST format `python -m pip install m2r`. If using Sphinx version lower than 3.0.0 simply add `m2r` to your extensions list. Otherwise, (at least until m2r is updated) add the following to the Sphinx config file from [life4.deal](https://github.com/life4/deal/commit/7f33cbc595ed31519cefdfaaf6f415dada5acd94)
+11. The next step is optional, and is only needed if you want to include your README on Read the Docs and that README is in Markdown format. Install m2r if your README file is not in RST format `python -m pip install m2r`. If using Sphinx version lower than 3.0.0 simply add `m2r` to your extensions list. Otherwise, (at least until m2r is updated) add the following to the Sphinx config file from [life4.deal-7f33cbc5](https://github.com/life4/deal/commit/7f33cbc595ed31519cefdfaaf6f415dada5acd94)
+
 ```Python
 from m2r import MdInclude
 
@@ -227,8 +228,8 @@ def setup(app):
     app.add_config_value('m2r_anonymous_references', False, 'env')
     app.add_config_value('m2r_disable_inline_math', False, 'env')
     app.add_directive('mdinclude', MdInclude)
-
 ```
+
 11. Optionally include your README file in the index. First create a readme.rst file in docs, containing the following (choose include based on your file type):
 ```rst
 README
