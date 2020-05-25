@@ -22,6 +22,8 @@ If you are trying to do something similar, read on to find some tips on how to a
 There are many guides out there for this kind of thing, but, especially in the research domain, [The Software Sustainability Institute](https://www.software.ac.uk/) has a really extensive free checklist for evaluating the sustainability of your software.
 In this article we will tackle many of these topics (TODO - will we, or is this just a nice link?).
 
+An example repository using all of these features is available on my GitHub at [PythonTemplate](https://github.com/seankmartin/PythonTemplate)
+
 ## Formatting and linting
 Firstly, I highly recommend regularly running formatting on your code, preferably before you commit anything.
 Running a format on your code will remove trivial errors in your code, such as forgetting spaces between the + operator.
@@ -171,8 +173,8 @@ Here describe circleCI and maybe github hooks.
 I will later describe the process of creating a Read the Docs website.
 However, I'd like to point out a simpler alternative to hosting your python project API by using [pdoc3](https://pdoc3.github.io/pdoc/) and GitHub pages.
 This is very simple and requires minimal effort.
-1. Install pdoc - `python -m pip install pdoc3`.
-2. Open the main directory of your python project.
+1. Install pdoc `python -m pip install pdoc3`.
+2. Open the main directory of your python project in a terminal.
 3. Create a branch called gh-pages and checkout that branch `git checkout -b gh-pages`.
 3. Create your html docs `pdoc3 your_package --html --o docs`.
 4. Add the file `index.html` from [PythonTemplate](https://github.com/seankmartin/PythonTemplate/blob/gh-pages/index.html) to the main directory of your project on the gh-pages branch. Replace `your_package` with your package name.
@@ -182,7 +184,75 @@ This is very simple and requires minimal effort.
 
 Overall this method is a very simple way of automatically turning your docstrings into a documentation website, but it does lack flexibility, and that is where Sphinx comes in.
 
-## Creating a Read the Docs website with Sphinx
+## Creating Documentation using Sphinx
+Firstly, you will need to create your documentation, which we will use [Sphinx](https://www.sphinx-doc.org/en/master/) for.
+1. Install Sphinx `python -m pip install Sphinx`.
+2. Open the main directory of your python project in a terminal.
+3. Make a folder called docs and move to that directory.
+4. In the docs folder, run `sphinx-quickstart`. Name your package as appropriate, and setup as required. Be sure to select `y` for the auto documentation setting. If you forget to enable autodoc, you must add `sphinx.ext.autodoc` to the Sphinx config file.
+5. Open the Sphinx config file `docs/conf.py`.
+6. Under the Path Setup section of the config file, add the following code
+```Python
+import os
+import sys
+curdir = os.path.dirname(__file__)
+package_location = os.path.abspath(
+    os.path.join(curdir, '../'))
+sys.path.append(package_location)
+```
+7. I'm going to assume you are not using RST docstrings, which is what Sphinx supports by default. So, add `'sphinx.ext.napoleon'` to the extensions list in the Sphinx config file. Using the [napoleon extension](https://www.sphinx-doc.org/en/master/usage/extensions/napoleon.html), you can pull documentation from docstrings that follow the NumPy or Google conventions.
+8. Update the napoleon configuration following [official docs](https://www.sphinx-doc.org/en/master/usage/extensions/napoleon.html#configuration).
+9. Now use [sphinx-apidoc](https://www.sphinx-doc.org/en/master/man/sphinx-apidoc.html) to directly generate a set of documentation very similar to how pdoc3 or another automatic API documentation tool works. You can run `sphinx-apidoc -e -f -o reference ../your_package`. However, we will set this up inside the Sphinx config file instead using `sphinx-apidoc`.
+10. Install apidoc `python -m pip install sphinxcontrib-apidoc` 
+10. Add the following to the Sphinx config file. 
+```Python
+extensions = [
+    'sphinxcontrib.apidoc',
+    # ...
+]
+apidoc_module_dir = '../your_package'
+apidoc_output_dir = 'reference'
+apidoc_excluded_paths = ['tests']
+apidoc_separate_modules = True
+```
+11. Choose a theme of your liking, setting the Sphinx config, for example `html_theme = 'sphinx_rtd_theme'` (this theme requires installation `python -m pip install sphinx_rtd_theme`)
+11. The next step is optional, and is only needed if you want to include your README on Read the Docs and that README is in Markdown format. Install m2r if your README file is not in RST format `python -m pip install m2r`. If using Sphinx version lower than 3.0.0 simply add `m2r` to your extensions list. Otherwise, (at least until m2r is updated) add the following to the Sphinx config file from [life4.deal](https://github.com/life4/deal/commit/7f33cbc595ed31519cefdfaaf6f415dada5acd94)
+```Python
+from m2r import MdInclude
+
+def setup(app):
+    # from m2r to make `mdinclude` work
+    app.add_config_value('no_underscore_emphasis', False, 'env')
+    app.add_config_value('m2r_parse_relative_links', False, 'env')
+    app.add_config_value('m2r_anonymous_references', False, 'env')
+    app.add_config_value('m2r_disable_inline_math', False, 'env')
+    app.add_directive('mdinclude', MdInclude)
+
+```
+11. Optionally include your README file in the index. First create a readme.rst file in docs, containing the following (choose include based on your file type):
+```rst
+README
+===========
+.. mdinclude:: ../README.md
+.. include:: ../README.rst
+```
+11. Modify the table of contents tree in`index.rst` to contain `readme.rst` (if last step completed) and `reference/modules.rst`
+```rst
+.. toctree::
+    :maxdepth: 2
+
+    readme
+    reference/modules
+```
+11. Run `make html` to generate your docs to `docs\_build\html`.
+12. Open `docs\_build\html\index.html` in a web browser, and rejoice!
+
+Some extra notes on using Sphinx:
+* The format for inserting links to other items in a Sphinx-built page is:
+`.. reference_type:: reference_location` 
+For example, to link to automatically generated module documentation, `reference_type` should be replaced by `automodule` and `reference_location` should be the name  of the module linked to. See more at [Sphinx domains](https://www.sphinx-doc.org/en/master/usage/restructuredtext/domains.html#cross-referencing-python-objects) and [Autodoc](https://www.sphinx-doc.org/en/master/usage/extensions/autodoc.html#module-sphinx.ext.autodoc).
+
+## Creating a Read the Docs website using Sphinx documentation
 
 ## Uploading your package to PyPI
 Your code is pretty, your code has tests, and your code has documentation, what next?
@@ -210,3 +280,5 @@ The other one is to use the fbs build system, which is actually very nice.
 ## Further reading
 1. [A more in depth guide to flake8](https://medium.com/python-pandemonium/what-is-flake8-and-why-we-should-use-it-b89bd78073f2)
 2. [A more in depth guide to PyPI packaging](https://medium.com/@joel.barmettler/how-to-upload-your-python-package-to-pypi-65edc5fe9c56)
+3. [An idiots guide to Sphinx documentation](https://samnicholls.net/2016/06/15/how-to-sphinx-readthedocs/#disqus_thread)
+4. [The actual Sphinx guide instead of this garbage](https://www.sphinx-doc.org/en/master/usage/quickstart.html)
