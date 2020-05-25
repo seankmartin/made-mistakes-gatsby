@@ -14,12 +14,12 @@ hide_meta: false
 featured: true
 ---
 
-So you've made some shiny Python code that does something great, and you want to share it with the world? 
+So you've made some shiny Python code that does something great, and you want to share it with the world?
 It's a situation I've commonly felt myself in for sure, but I've never really known the process to having code adhering to the PEP guidelines, a package on PyPI, documentation on read the docs etc.
 
 If you are trying to do something similar, read on to find some tips on how to achieve this!
 
-There are many guides out there for this kind of thing, but, especially in the research domain, [The Software Sustainability Institute](https://www.software.ac.uk/) has a really extensive free checklist for evaluating the sustainability of your software. 
+There are many guides out there for this kind of thing, but, especially in the research domain, [The Software Sustainability Institute](https://www.software.ac.uk/) has a really extensive free checklist for evaluating the sustainability of your software.
 In this article we will tackle many of these topics (TODO - will we, or is this just a nice link?).
 
 ## Formatting and linting
@@ -151,7 +151,7 @@ if __name__ == "__main__":
 
 Running linting and doc checking gives the following output
 ```bash
-➜  Temp python3 -m flake8 my_code   
+➜  Temp python3 -m flake8 my_code
 my_code/ugly_python.py:8:1: F401 'numpy as np' imported but unused
 my_code/ugly_python.py:9:1: F401 'matplotlib.pyplot as plt' imported but unused
 my_code/ugly_python.py:10:1: F401 'math.floor' imported but unused
@@ -167,9 +167,22 @@ Here describe pytest (or otherwise) basically.
 ## Continuous integration
 Here describe circleCI and maybe github hooks.
 
-## Creating a Read the Docs website
-I'm not actually sure how to do this yet, I've been using pdoc3 to make things very simple, which is a good alternative for simplicity.
-However, will describe this when it is set up!
+## Creating a simple website
+I will later describe the process of creating a Read the Docs website.
+However, I'd like to point out a simpler alternative to hosting your python project API by using [pdoc3](https://pdoc3.github.io/pdoc/) and GitHub pages.
+This is very simple and requires minimal effort.
+1. Install pdoc - `python -m pip install pdoc3`.
+2. Open the main directory of your python project.
+3. Create a branch called gh-pages and checkout that branch `git checkout -b gh-pages`.
+3. Create your html docs `pdoc3 your_package --html --o docs`.
+4. Add the file `index.html` from [PythonTemplate](https://github.com/seankmartin/PythonTemplate/blob/gh-pages/index.html) to the main directory of your project on the gh-pages branch. Replace `your_package` with your package name.
+4. Commit the resulting files to git and push the changes to GitHub `git add -A && git commit -m "Built docs for first time" && git push --set-upstream origin gh-pages`.
+5. Open your GitHub repository, go to settings -> GitHub Pages section and set the source option to gh-pages branch if GitHub has not automatically picked this up.
+6. You should end up with something like [this](https://seankmartin.github.io/PythonTemplate).
+
+Overall this method is a very simple way of automatically turning your docstrings into a documentation website, but it does lack flexibility, and that is where Sphinx comes in.
+
+## Creating a Read the Docs website with Sphinx
 
 ## Uploading your package to PyPI
 Your code is pretty, your code has tests, and your code has documentation, what next?
@@ -183,10 +196,10 @@ To upload to PyPI, make an account on PyPI, and then follow these steps:
 ```bash
 python -m pip install --upgrade setuptools
 python -m pip install --upgrade twine
-rm -rf dist 
-python setup.py sdist 
-twine check dist/* 
-twine upload dist/* -u USERNAME -p  PASSWORD --verbose 
+rm -rf dist
+python setup.py sdist
+twine check dist/*
+twine upload dist/* -u USERNAME -p  PASSWORD --verbose
 ```
 
 ## Building an executable
