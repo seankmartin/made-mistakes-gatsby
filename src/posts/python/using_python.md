@@ -248,12 +248,21 @@ README
 11. Run `make html` to generate your docs to `docs\_build\html`.
 12. Open `docs\_build\html\index.html` in a web browser, and rejoice!
 
-Some extra notes on using Sphinx:
+Some extra notes on using Sphinx.
 * The format for inserting links to other items in a Sphinx-built page is:
 `.. reference_type:: reference_location` 
 For example, to link to automatically generated module documentation, `reference_type` should be replaced by `automodule` and `reference_location` should be the name  of the module linked to. See more at [Sphinx domains](https://www.sphinx-doc.org/en/master/usage/restructuredtext/domains.html#cross-referencing-python-objects) and [Autodoc](https://www.sphinx-doc.org/en/master/usage/extensions/autodoc.html#module-sphinx.ext.autodoc).
+* An alternative to the autodoc system using apidoc is to use the [autosummary](https://www.sphinx-doc.org/en/master/usage/extensions/autosummary.html) extension, which creates a page for each function or class in a table. For very large codebases, this is likely preferable.
 
 ## Creating a Read the Docs website using Sphinx documentation
+A small bit of setup is required in your online repository. We need to create a [Read the docs config file](https://docs.readthedocs.io/en/stable/config-file/v2.html). Most likely you can just add the `.readthedocs.yml` and `docs\requirements.txt` from [PythonTemplate](https://github.com/seankmartin/PythonTemplate) to your project if you have been following this guide. You may need to add extra doc building requirements to `docs\requirements.txt`, such as the commonly used [recommonmark](https://recommonmark.readthedocs.io/en/latest/index.html).
+
+1. Create an account on [Read the Docs](https://readthedocs.org/).
+2. Import your github repository on your Read the Docs profile.
+3. Hopefully your project builds correctly on Read the Docs. If not, check out the build log, most likely there is just a package you used not included in `docs\requirements.txt` or a setting is incorrect in `.readthedocs.yml`
+4. Optional step, set up a webhook following the [RTD docs](https://docs.readthedocs.io/en/stable/webhooks.html) so that your RTD is rebuilt on file change.
+
+After all that hard work, you should have something like my [PythonTemplate Read the Docs](https://pythontemplate.readthedocs.io/en/latest/index.html) - though hopefully your real project is a bit prettier.
 
 ## Uploading your package to PyPI
 Your code is pretty, your code has tests, and your code has documentation, what next?
