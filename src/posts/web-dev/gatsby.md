@@ -17,10 +17,16 @@ featured: true
 [Gatsby](https://www.gatsbyjs.org/docs/) is a great tool, and as the documentation says, a blazing fast modern site generator for React. As an example, this website is built using Gatsby. Here, we will run through getting Gatsby installed and using it, as opposed to setting up a Gatsby project.
 
 ## Installation steps
-If you are on Windows, I highly recommend installing [Chocolatey](https://chocolatey.org/) or [Scoop](https://scoop.sh/) as it will make the following installations much easier and a bit more Unix like - you could read a lot about the differences, so I guess just pick the one you like the look of!
+If you are on Windows, I highly recommend installing [Chocolatey](https://chocolatey.org/) or [Scoop](https://scoop.sh/) as it will make the following installations much easier and a bit more Unix like. You could read a lot about the differences in these programs, so I guess just pick the one you like the look of!
 
 1. Install node.js, a javascript runtime, following the official docs to [install via a package manager](https://nodejs.org/en/download/package-manager/). I ran into an error with node not correctly adding to my bash startup files. If you find the same, copy the relevant output from the installation to a bash startup and source the same file.
-1. I would suggest also installing yarn, a cool package manager following the instructions on the [official docs](https://classic.yarnpkg.com/en/docs/install/#debian-stable).
+1. I would suggest also installing yarn, a cool package manager following the instructions on the [official docs](https://classic.yarnpkg.com/en/docs/install/#debian-stable). As an example, for Chocolatey these commands are
+
+```shell
+choco install nodejs.install
+choco install yarn
+```
+
 3. Install the Gatsby Command Line Interface (CLI).
 
 ```shell

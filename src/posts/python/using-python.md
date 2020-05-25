@@ -51,7 +51,7 @@ Finally, I suggest running pydocstyle and docformatter to get your docstrings in
 
 The general format is like this, shown here for yapf and flake8, with docformatter, and pydocstyle. Usually `-r` indicates recursive, `-i` indicates in place, and any of these can be run with the `-h` flag to get more information. Furthermore, most of these can be integrated into a code editor.
 
-```Shell
+```bash
 python -m pip install yapf flake8 docformatter pydocstyle
 export my_code_file_or_directory=var
 python -m autopep8 $my_code_file_or_directory -r -i
@@ -231,14 +231,14 @@ def setup(app):
 ```
 
 11. Optionally include your README file in the index. First create a readme.rst file in docs, containing the following (choose include based on your file type):
-```rst
+```rest
 README
 ===========
 .. mdinclude:: ../README.md
 .. include:: ../README.rst
 ```
 11. Modify the table of contents tree in`index.rst` to contain `readme.rst` (if last step completed) and `reference/modules.rst`
-```rst
+```rest
 .. toctree::
     :maxdepth: 2
 
@@ -273,7 +273,7 @@ Examples of all these are available on my github TODO provide link to my templat
 
 
 To upload to PyPI, make an account on PyPI, and then follow these steps:
-```bash
+```shell
 python -m pip install --upgrade setuptools
 python -m pip install --upgrade twine
 rm -rf dist
