@@ -10,7 +10,7 @@ Have a question for me? My direct messages are open [on Twitter](https://twitter
 
 Before sending, please read my [frequently asked questions section](/faqs/) first to make sure I haven't already answered it. For anything else use the form below.
 
-<form id="form1" name="form1" accept-charset="UTF-8" autocomplete="off" enctype="multipart/form-data" method="post" novalidate action="https://mademistakes.wufoo.com/forms/zr2w1zk1hbcjv0/#public">
+<form id="form1" name="form1" accept-charset="UTF-8" autocomplete="off" enctype="multipart/form-data" method="post" novalidate action="&#104;&#116;&#116;&#112;&#115;&#58;&#47;&#47;&#102;&#111;&#114;&#109;&#115;&#112;&#114;&#101;&#101;&#46;&#105;&#111;&#47;&#109;&#97;&#114;&#116;&#105;&#110;&#115;&#55;&#64;&#116;&#99;&#100;&#46;&#105;&#101;&#13;&#10;&#13;&#10;">
   <div class="form-group">
     <label id="title7" for="Field7">Name
       <input id="Field7" name="Field7" type="text" spellcheck="false" maxlength="255" required>
