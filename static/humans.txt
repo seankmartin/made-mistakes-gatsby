@@ -2,15 +2,14 @@ _  ________ ____   _  ______________  _________
 |\/||__||  \|___   |\/||[__  | |__||_/ |___[__
 |  ||  ||__/|___   |  ||___] | |  || \_|______]
 
-  MADEMISTAKES.COM
+  seankmartin.netlify.app
 
-  Designer:     Michael Rose
-  Twitter:      @mmistakes
-  Location:     Buffalo, New York USA
+  Designer:     Sean Martin and Michael Rose
+  Twitter:      @seankieranm
+  Location:     Dublin Ireland, Buffalo, New York USA
 
   Language:     English
   Built with:   Gatsby <https://www.gatsbyjs.org/>
                 Visual Studio Code <https://code.visualstudio.com/>
-                Adobe Creative Suite <https://www.adobe.com/>
                 Travis CI <https://travis-ci.org/>
                 Netlify <https://www.netlify.com/>
