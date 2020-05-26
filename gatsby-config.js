@@ -66,10 +66,6 @@ module.exports = {
     ],
     footerMenu: [
       {
-        title: 'Support me',
-        path: '/support/',
-      },
-      {
         title: 'FAQs',
         path: '/faqs/',
       },
@@ -139,7 +135,7 @@ module.exports = {
         head: false,
         anonymize: true,
         respectDNT: true,
-        cookieDomain: 'mademistakes.com',
+        cookieDomain: 'seankmartin.netlify.app',
       },
     },
     'gatsby-plugin-catch-links',
