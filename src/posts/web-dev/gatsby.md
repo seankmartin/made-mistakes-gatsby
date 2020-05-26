@@ -49,6 +49,9 @@ gatsby build
 gatsby serve
 ```
 
+## Publish to Netlify
+With very little extra effort you can publish your Gatsby to [Netlify](https://www.netlify.com/). Simply create a profile and import your project into Netlify. Netlify will generally recognise that this is a Gatsby project and set the build script accordingly. All you need to do for a successful build is add any [environment variables to Netlify](https://docs.netlify.com/configure-builds/environment-variables/). Go ahead and add a Netlify badge to your project README, you've earned it.
+
 ## Further Reading
 * Check out Gatsby's own tutorials over at https://www.gatsbyjs.org/docs/. This guide is more in line with their quick start guide.
 * Read about [JAMSTACK](https://jamstack.org/) and other alternatives tools for making static websites.
