@@ -6,11 +6,13 @@ last_modified_at: 2020-05-26T15:03:14
 excerpt: "Sean K. Martin is a PhD student in Trinity College Dublin studying Neuroscience."
 image: ../images/profile_cowboy.jpg
 ---
+## The infinite monkey theorem has been realised.
+Somehow I made this website.
 
 <figure class="two-column">
   <img src="../images/presentation.jpg" alt="Presenting at GRAPP">
   <img src="../images/profile_tv.jpg" alt="Very confused">
-  <figcaption>Me twice.</figcaption>
+  <figcaption>Me twice. I'm slightly less confused the first time.</figcaption>
 </figure>
 
 Find me elsewhere on the internet!
