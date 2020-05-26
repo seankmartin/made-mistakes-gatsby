@@ -39,7 +39,7 @@ const HomePage = ({ data }) => {
               I'm a boring mathematician and computer scientist, and am currently a PhD student in Trinity College's Institute of Neuroscience. I enjoy fumbling through video games, roleplaying in dungeons and dragons, attempting piano, and messing about with all kinds of code - I mostly blog about the latter.
             </p>
             <p>
-              This site is built with Gatsby and made possible by the GitHub source code very kindly shared by Michael Rose, go check out his website, <a href="https://mademistakes.com">Making Mistakes</a>.
+              This site is built with Gatsby and made possible by the GitHub source code very kindly shared by Michael Rose, go check out his website <a href="https://mademistakes.com">Made Mistakes</a>.
             </p>
           </div>
           <Img
