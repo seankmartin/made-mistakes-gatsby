@@ -19,7 +19,7 @@ module.exports = {
   coilUrl: '$coil.xrptipbot.com/AbwB-yidQNanSI2lYyTJJw',
   googleAnalyticsID: '',
   staticmanApi:
-    'https://mm-staticman.herokuapp.com/v2/entry/mmistakes/made-mistakes-gatsby/master/comments',
+    'https://staticman-bot-skm.herokuapp.com/v3/entry/seankmartin/made-mistakes-gatsby/master/comments',
 
   // JSONLD / Manifest
   favicon: '/images/logo.png', // Used for manifest favicon generation
@@ -76,8 +76,8 @@ module.exports = {
     number_of_repos: 4,
   },
   reCaptcha: {
-    siteKey: '6LdRBykTAAAAAFB46MnIu6ixuxwu9W1ihFF8G60Q',
+    siteKey: '6LdZX_wUAAAAAP4HsmpzQJgwQbAyZFmAkeXn_FJ8',
     secret:
-      'uK2DH+wELCxTtM0MmfKfT0W5GPt0B+dGVZ3L4IeYtnKRQ7a/zkdRUmi0z6J7K4BumST/CKuKnk4l3EUpDxWnA0E29kpMzbmhukm0vXCZfGg6zLETxcPXTWcrRchAp59oe77OdRlXjNe01nqL6fohmFv5lBT1SrxfORvBxvSsyTrrBXG1b5JJLleP9o4LGDK15lPCASEehWxpNTs+jxE/VUemMvedGautUBQyK5PRGaKJQb+xe9wl+9GgwueASRbGPl6yUnytUFy3V59yg+WbhbJJhA3dEKW4vnUu4jcgLL8FusCQQjDSvy0Ypqq3Dfx35L5YVfmLW+FrtYNvoD6zhA==',
+      'C98nn9QV8RXDsmvkkC81gaVvZn4W4Zd21wO6p4DvylYItoVj9ddbsAl3yD0/IP0PwOBNx1/zKSwgQvATE58i/7thBH+mVi634Xrr3toVy+NPpYGLDnwQJ3GRpB8Vqn21oE40URx2LAOGpVq1+B+1cVa26+KWC5Nf+r12gss7NGzhYwMG9NbqWSt8QJmP0H5pm3s8vGPvs9ttxuTmLW47U+5Z9teXFkKWa3y5wpA4spUU8V1TpQnOhjhheev9H5fNxtJ3FAKIicNC0EPCa/lkQ50ZOuBfUMybQ5Gid701Btrrvtnxj2wP0bo7gatVxNaIz3JaTBxWHWp/fEd0FYWr1EtTzujbuxzPKOCeWUBEso1+8tG7GJQG3dRfusrd4jcAyqTiXJC1geJLptUGLeKF7hYKPaldMKDPNoJgy1obHvRwgT11c4WrqZDihRTbI9zO3WzPZsCWCkXgf1sOfZU6gkG+Z8DbgI9CxrwPFEZSa48Q4/LJYTWTwE2/L88tt0FKH2KbL1fJ2QabXySRiFIyRHMiu+Qal98FCAE4i/idiFA+wMgH9yKYWgeKZxe/5tE2yZvSc1w4X8p9zZY9LLUzfJwcuBbF1R8pZ3A786qKP5Q3rxtrqLkrioQIwUTMTqrekyrACN2OzCXH7nkIUdjvy3tERG7WQvgEojwqeMMZGpQ=',
   },
 }

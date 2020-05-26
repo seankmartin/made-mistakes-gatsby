@@ -1,6 +1,6 @@
 ---
 title: "Getting Gatsby installed and running"
-excerpt: "How to set up Gatsby and use Gatsby"
+excerpt: "How to set up Gatsby and publish your built site to Netlify."
 date: 2020-05-25
 path: /web-dev/installing-gatsby/
 image: ../../images/gatsby.jpg
@@ -50,9 +50,13 @@ gatsby serve
 ```
 
 ## Publish to Netlify
-With very little extra effort you can publish your Gatsby to [Netlify](https://www.netlify.com/). Simply create a profile and import your project into Netlify. Netlify will generally recognise that this is a Gatsby project and set the build script accordingly. All you need to do for a successful build is add any [environment variables to Netlify](https://docs.netlify.com/configure-builds/environment-variables/). Go ahead and add a Netlify badge to your project README, you've earned it.
+With very little extra effort you can publish your Gatsby site to [Netlify](https://www.netlify.com/).
+Simply create a profile and import your project into Netlify.
+Netlify will generally recognise that this is a Gatsby project and set the build script accordingly.
+All you need to do for a successful build is add any [environment variables to Netlify](https://docs.netlify.com/configure-builds/environment-variables/).
+Go ahead and add a Netlify badge to your project README, you've earned it.
 
 ## Further Reading
 * Check out Gatsby's own tutorials over at https://www.gatsbyjs.org/docs/. This guide is more in line with their quick start guide.
 * Read about [JAMSTACK](https://jamstack.org/) and other alternatives tools for making static websites.
-* Read about [Staticman](https://staticman.net/) (not to be confused with Marvel's Dynamic Man). It is a way to add user-generated content to a static website, it's pretty cool (but is the site now dynamic?).
+* Read about [Staticman](https://staticman.net/) (not to be confused with Marvel's Dynamic Man). Its a way to add user-generated content to a static website, it is pretty cool. There is a nice blog post about setting it up [here](https://travisdowns.github.io/blog/2020/02/05/now-with-comments.html).
