@@ -64,6 +64,59 @@ const WorksPage = ({ data }) => {
             })}
           </div>
           <h2 className={style.subHeading}>
+            <span>Research</span>
+          </h2>
+          <div className={style.gridList}>
+            <html>
+              <table>
+                <tr valign="top">
+                  <td align="right" class="bibtexnumber">
+                    [<a name="zibrek2019photorealism">1</a>]
+                  </td>
+                  <td class="bibtexitem">
+                    Katja Zibrek, Sean Martin, and Rachel McDonnell. Is
+                    photorealism important for perception of expressive virtual
+                    humans in virtual reality?
+                    <em>ACM Transactions on Applied Perception (TAP)</em>,
+                    16(3):1-19, 2019. [&nbsp;
+                    <a href="skm_bib.html#zibrek2019photorealism">bib</a>&nbsp;]
+                  </td>
+                </tr>
+
+                <tr valign="top">
+                  <td align="right" class="bibtexnumber">
+                    [<a name="martin2019using">2</a>]
+                  </td>
+                  <td class="bibtexitem">
+                    Se&aacute;n Martin, Se&aacute;n Bruton, David Ganter, and
+                    Michael Manzke. Using a depth heuristic for light field
+                    volume rendering. In{' '}
+                    <em>
+                      14th International Conference on Computer Graphics Theory
+                      and Applications
+                    </em>
+                    , pages 134-144, 2019. [&nbsp;
+                    <a href="skm_bib.html#martin2019using">bib</a>&nbsp;]
+                  </td>
+                </tr>
+
+                <tr valign="top">
+                  <td align="right" class="bibtexnumber">
+                    [<a name="islam2019neurochat">3</a>]
+                  </td>
+                  <td class="bibtexitem">
+                    Md&nbsp;Nurul Islam, Se&aacute;n&nbsp;K Martin, John&nbsp;P
+                    Aggleton, and Shane&nbsp;M O’Mara. Neurochat: A toolbox to
+                    analyse the dynamics of neuronal encoding in freely-behaving
+                    rodents in vivo.
+                    <em>Wellcome Open Research</em>, 4(196):196, 2019. [&nbsp;
+                    <a href="skm_bib.html#islam2019neurochat">bib</a>&nbsp;]
+                  </td>
+                </tr>
+              </table>
+            </html>
+          </div>
+          <h2 className={style.subHeading}>
             <span>
               <Octicon
                 icon={MarkGithub}
