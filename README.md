@@ -1,8 +1,9 @@
+[![Build Status](https://travis-ci.com/seankmartin/made-mistakes-gatsby.svg?branch=master)](https://travis-ci.com/seankmartin/made-mistakes-gatsby)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/91c03413-a321-4a1f-bd01-ca7702943b86/deploy-status)](https://app.netlify.com/sites/seankmartin/deploys)
 
-# [Made Mistakes](https://mademistakes.com) Source Code
+# [SKM Website](https://seankmartin.netlify.app/) Source Code
 
-This is the source code of Made Mistakes, a personal blog and portfolio built 
+This is the source code of Sean K. Martin's personal blog and portfolio built 
 with [Gatsby](https://www.gatsbyjs.org/), [Travis CI](https://travis-ci.org/),  and [Netlify](https://www.netlify.com/).
 
 ## Getting started
@@ -17,6 +18,7 @@ with [Gatsby](https://www.gatsbyjs.org/), [Travis CI](https://travis-ci.org/),  
 
    ```
    GITHUB_API_TOKEN=yourPersonalGitHubApiToken
+   MY_SITE_URL=yourSiteURL
    ```
 
    **Note:** do not commit this file. Builds will fail with a `TypeError: Cannot read property 'match' of undefined` since GitHub repo listing on `/pages/works.js` can't resolve the GraphQL query.
@@ -222,4 +224,4 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-Made Mistakes incorporates photographs from [Unsplash](https://unsplash.com).
+SKM incorporates photographs from [Unsplash](https://unsplash.com).

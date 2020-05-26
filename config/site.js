@@ -4,7 +4,7 @@ module.exports = {
   title: 'Sean K. Martin', // Navigation and site title
   titleAlt: 'Sean K. Martin', // Title for schema.org JSONLD
   description: 'Personal website',
-  url: 'https://mademistakes.com', // Domain of your site. No trailing slash!
+  url: 'https://seankmartin.netlify.app', // Domain of your site. No trailing slash!
   siteLanguage: 'en', // Language Tag on <html> element
   image: {
     // Used for SEO, relative to /static/ folder
@@ -13,8 +13,8 @@ module.exports = {
     height: 384,
   },
   ogLanguage: 'en_US', // Facebook Language
-  pingbackUrl: 'https://webmention.io/mademistakes.com/xmlrpc',
-  webmentionUrl: 'https://webmention.io/mademistakes.com/webmention',
+  pingbackUrl: 'https://webmention.io/github.com_seankmartin/xmlrpc',
+  webmentionUrl: 'https://webmention.io/github.com_seankmartin/webmention',
   micropubUrl: 'https://mm-micropub-to-github.herokuapp.com/micropub/main',
   coilUrl: '$coil.xrptipbot.com/AbwB-yidQNanSI2lYyTJJw',
   googleAnalyticsID: '',
@@ -27,7 +27,7 @@ module.exports = {
   author: {
     // Author for schema.org JSONLD
     name: 'Seán Kieran Martin',
-    url: 'https://mademistakes.com',
+    url: 'https://seankmartin.netlify.app/',
   },
   themeColor: '#ffffff',
   backgroundColor: '#111111',
