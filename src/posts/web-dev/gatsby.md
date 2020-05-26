@@ -5,7 +5,7 @@ date: 2020-05-25
 path: /web-dev/installing-gatsby/
 image: ../../images/gatsby.jpg
 categories: [articles]
-tags: [web, coding]
+tags: [web dev, coding, gatsby]
 toc: true
 comments: true
 comments_locked: false
