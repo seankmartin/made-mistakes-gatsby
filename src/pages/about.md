@@ -48,5 +48,3 @@ Find me elsewhere on the internet!
     </div>
   </li>
 </ul>
-
-\*[CMS]: Content Management System
