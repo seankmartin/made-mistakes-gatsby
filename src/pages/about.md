@@ -1,13 +1,15 @@
 ---
-title: "About Sean K. Martin"
+title: 'About Sean K. Martin'
 path: /about/
 date: 2020-05-26
 last_modified_at: 2020-05-26T15:03:14
-excerpt: "Sean K. Martin is a PhD student in Trinity College Dublin studying Neuroscience."
+excerpt: 'Sean K. Martin is a PhD student in Trinity College Dublin studying Neuroscience.'
 image: ../images/profile_cowboy.jpg
 ---
+
 ## The infinite monkey theorem has been realised.
-Somehow I made this website.
+
+Somehow I got this website running.
 
 <figure class="two-column">
   <img src="../images/presentation.jpg" alt="Presenting at GRAPP">
@@ -47,4 +49,4 @@ Find me elsewhere on the internet!
   </li>
 </ul>
 
-*[CMS]: Content Management System
+\*[CMS]: Content Management System
