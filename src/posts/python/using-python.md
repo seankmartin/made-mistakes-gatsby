@@ -1,6 +1,6 @@
 ---
-title: "Getting your python code ready for the world"
-excerpt: "A lengthy article on how to clean up your python code and show it to the world."
+title: 'Getting your python code ready for the world'
+excerpt: 'A lengthy article on how to clean up your python code and show it to the world.'
 date: 2020-05-22
 path: /python/getting_your_code_out_there/
 image: ../../images/python_regius.jpg
@@ -9,47 +9,73 @@ tags: [python, coding]
 toc: true
 comments: true
 comments_locked: false
-last_modified_at: 2020-05-22T15:52:14
+last_modified_at: 2020-06-11T17:45:14
 hide_meta: false
 featured: true
 ---
 
-So you've made some shiny Python code that does something great, and you want to share it with the world?
-It's a situation I've commonly felt myself in for sure, but I've never really known the process to having code adhering to the PEP guidelines, a package on PyPI, documentation on read the docs etc.
+I will describe how to style Python code adhering to the PEP guidelines, upload a package on PyPI, and host documentation on Read the Docs or GitHub pages.
+An example repository using these features is available on my GitHub at [PythonTemplate](https://github.com/seankmartin/PythonTemplate).
 
-If you are trying to do something similar, read on to find some tips on how to achieve this!
+Following the steps in this article will greatly boost the sustainability of your software.
+[The Software Sustainability Institute](https://www.software.ac.uk/) has a free checklist for evaluating the sustainability of your software to compare against.
 
-There are many guides out there for this kind of thing, but, especially in the research domain, [The Software Sustainability Institute](https://www.software.ac.uk/) has a really extensive free checklist for evaluating the sustainability of your software.
-In this article we will tackle many of these topics (TODO - will we, or is this just a nice link?).
+## Formatting
 
-An example repository using all of these features is available on my GitHub at [PythonTemplate](https://github.com/seankmartin/PythonTemplate)
+### Why use a formatter?
 
-## Formatting and linting
-Firstly, I highly recommend regularly running formatting on your code, preferably before you commit anything.
-Running a format on your code will remove trivial errors in your code, such as forgetting spaces between the + operator.
-Overall, using a format will result in cleaner more readable code that will be much easier for other developers to work with.
-Ideally, you should provide details of the formatter you use and any parameters passed on your online code repository so that other contributors can keep in the same coding style as your overall repository.
-There is one caveat to all of this!
-If you are formatting your code for the first time, format all the code and do a formatting commit.
-It is very important that you don't commit code behaviour changes in the same batch as formatting commits - it will make the behaviour changes very hard to spot!
-This is especially important if you are contributing to another open source repository.
+Running a formatter on your code will remove bad style in your code, such as forgetting spaces between the addition operator, and will enforce a consistent style.
+This will result in cleaner, more readable code that is easier to work with.
+Ideally, you should provide details of the formatter used and any parameters passed to the formatter on your online code repository so that other contributors can keep in the same coding style.
 
+It's important not to commit code behaviour changes in the same commit as large formatting changes as it will make the behaviour changes hard to spot.
+This is crucial if you are contributing to another open source repository.
 
-In Python, there are many great options available, such as autopep8, black, and YAPF.
-I usually go with autopep8, since it is quite simple and just aims for conformance with the PEP 8 style guide.
-However, black and YAPF may produce nicer results if you are willing to hand over a bit more control to these tools.
-Let's go with black for now!
+### What about git blame?
 
-In case you haven't heard the term, *linting* means running a tool on your code to check for basic quality adherence.
-For example, linting can pick up import statements that are never used, lines that are too long, or snytax errors - in general things you don't want to leave lying around!
+The [git blame command](https://git-scm.com/docs/git-blame) shows what author modified each line of a file and when - but since formatting changes a lot of lines, that would be a problem.
+If you have never run formatting before on your code in git, it's possible to inform git not to include an initial formatting commit in blame.
+There's a guide on this on the [README for black](https://github.com/psf/black#migrating-your-code-style-without-ruining-git-blame), but here is a condensed version:
 
+1. Format all the code and make one massive commit with all the changes.
+2. Add the full 40 character commit ID to a file called `.git-blame-ignore-revs`. This full hash can be obtained with the command `git log -1 --format="%H"`.
 
-To perform linting in Python, there are many good options, such as flake8, pylint, bandit, and many more - but lets go with flake8 since it has a low false positive rate.
+   ```text
+   # Formatted code
+   FULL-GIT-COMMIT-HASH
+   ```
 
+3. Either pass a flag to git blame, or configure git to automatically do this.
 
-Finally, I suggest running pydocstyle and docformatter to get your docstrings in check!
+   ```shell
+   git blame filename --ignore-revs-file .git-blame-ignore-revs
+   git config blame.ignoreRevsFile .git-blame-ignore-revs
+   ```
 
-The general format is like this, shown here for yapf and flake8, with docformatter, and pydocstyle. Usually `-r` indicates recursive, `-i` indicates in place, and any of these can be run with the `-h` flag to get more information. Furthermore, most of these can be integrated into a code editor.
+### Which formatter to use?
+
+In Python, there are great options available, such as [Autopep8](https://github.com/hhatto/autopep8), [Black](https://github.com/psf/black), and [YAPF](https://github.com/google/yapf).
+Here are my thoughts on these:
+
+- Autopep8 is minimal, and only checks for PEP 8 adherence. It's good if you want most of the control over the style and small formatting help.
+- YAPF and Black are more aggressive formatters as they take away some of the drudgery of maintaining code, but change the appearance significantly. They are good if you are willing to release some control over the code style.
+
+Regardless of your choice, a good formatter should produce an [Abstract Syntax Tree](https://docs.python.org/3/library/ast.html) on the formatted code that is equivalent to the original. I also suggest running pydocstyle and docformatter to get your docstrings in check.
+
+## Linting
+
+_linting_ means running a tool on your code to check for basic quality adherence.
+For example, linting can pick up import statements that are never used, lines that are too long, or syntax errors.
+
+To perform linting in Python, there are good options, such as [Flake8](https://github.com/PyCQA/flake8), [Pylint](https://github.com/PyCQA/pylint), [Bandit](https://github.com/PyCQA/bandit).
+Bandit is a little different since it is aimed towards security issues.
+I recommend using flake8 since it has a low false positive rate.
+
+## Running Formatting and Linting
+
+The way these tools work is similar, so an example is shown below for autopep8 and flake8, with docformatter and pydocstyle.
+Usually `-r` indicates recursive, `-i` indicates in place, and any of these tools can be run with the `-h` flag to get more information.
+Furthermore, most of these tools can be integrated into your favourite code editor.
 
 ```bash
 python -m pip install yapf flake8 docformatter pydocstyle
@@ -61,6 +87,7 @@ python -m pydocstyle $my_code_file_or_directory
 ```
 
 For example, this code does not look great:
+
 ```Python
 """Let's all write some really ugly python. We can start off with a line that is just way too long."""
 
@@ -98,8 +125,9 @@ if __name__ == "__main__":
 	else:
 		print("Sorry I didn\'t get {}, leaving!".format(user_inp))
 ```
-Lets run formatting and linting!
+
 After running yapf and docformatter, the output is:
+
 ```Python{numberLines: true}
 """
 Let's all write some really ugly python.
@@ -151,7 +179,8 @@ if __name__ == "__main__":
 
 ```
 
-Running linting and doc checking gives the following output
+Then, running flake8 and pydocstyle gives the following output:
+
 ```bash
 ➜  Temp python3 -m flake8 my_code
 my_code/ugly_python.py:8:1: F401 'numpy as np' imported but unused
@@ -163,35 +192,41 @@ my_code/ugly_python.py:15 in public function `main`:
 ```
 
 ## Testing
+
 Here describe pytest (or otherwise) basically.
 
-
 ## Continuous integration
-Here describe circleCI and maybe github hooks.
 
-## Creating a simple website
-I will later describe the process of creating a Read the Docs website.
-However, I'd like to point out a simpler alternative to hosting your python project API by using [pdoc3](https://pdoc3.github.io/pdoc/) and GitHub pages.
-This is very simple and requires minimal effort.
+Here describe circleCI and maybe github hooks. Or perhaps Travis-CI is easier.
+
+## Creating a simple website on GitHub Pages with pdoc3
+
+I will describe the process of creating a Read the Docs website.
+However, I'd like to point out a simpler alternative to hosting your python project API docs by using [pdoc3](https://pdoc3.github.io/pdoc/) and GitHub pages.
+This is simple and requires minimal effort.
+
 1. Install pdoc `python -m pip install pdoc3`.
 2. Open the main directory of your python project in a terminal.
 3. Create a branch called gh-pages and checkout that branch `git checkout -b gh-pages`.
-3. Create your html docs `pdoc3 your_package --html --o docs`.
-4. Add the file `index.html` from [PythonTemplate](https://github.com/seankmartin/PythonTemplate/blob/gh-pages/index.html) to the main directory of your project on the gh-pages branch. Replace `your_package` with your package name.
-4. Commit the resulting files to git and push the changes to GitHub `git add -A && git commit -m "Built docs for first time" && git push --set-upstream origin gh-pages`.
-5. Open your GitHub repository, go to settings -> GitHub Pages section and set the source option to gh-pages branch if GitHub has not automatically picked this up.
-6. You should end up with something like [this](https://seankmartin.github.io/PythonTemplate).
+4. Create your html docs `pdoc3 your_package --html --o docs`.
+5. Add the file `index.html` from [PythonTemplate](https://github.com/seankmartin/PythonTemplate/blob/gh-pages/index.html) to the main directory of your project on the gh-pages branch. Replace `your_package` with your package name and my github link with yours.
+6. Commit the resulting files to git and push the changes to GitHub `git add -A && git commit -m "Built docs for first time" && git push --set-upstream origin gh-pages`.
+7. Open your GitHub repository, go to settings -> GitHub Pages section and set the source option to gh-pages branch if GitHub has not automatically picked this up.
+8. You should end up with something like [this](https://seankmartin.github.io/PythonTemplate).
 
-Overall this method is a very simple way of automatically turning your docstrings into a documentation website, but it does lack flexibility, and that is where Sphinx comes in.
+Overall, this method is a simple way of automatically turning your docstrings into a documentation website, but it lacks flexibility - that is where Sphinx comes in.
 
 ## Creating Documentation using Sphinx
+
 Firstly, you will need to create your documentation, which we will use [Sphinx](https://www.sphinx-doc.org/en/master/) for.
+
 1. Install Sphinx `python -m pip install Sphinx`.
 2. Open the main directory of your python project in a terminal.
 3. Make a folder called docs and move to that directory.
 4. In the docs folder, run `sphinx-quickstart`. Name your package as appropriate, and setup as required. Be sure to select `y` for the auto documentation setting. If you forget to enable autodoc, you must add `sphinx.ext.autodoc` to the Sphinx config file.
 5. Open the Sphinx config file `docs/conf.py`.
 6. Under the Path Setup section of the config file, add the following code
+
 ```Python
 import os
 import sys
@@ -200,11 +235,13 @@ package_location = os.path.abspath(
     os.path.join(curdir, '../'))
 sys.path.append(package_location)
 ```
+
 7. I'm going to assume you are not using RST docstrings, which is what Sphinx supports by default. So, add `'sphinx.ext.napoleon'` to the extensions list in the Sphinx config file. Using the [napoleon extension](https://www.sphinx-doc.org/en/master/usage/extensions/napoleon.html), you can pull documentation from docstrings that follow the NumPy or Google conventions.
 8. Update the napoleon configuration following [official docs](https://www.sphinx-doc.org/en/master/usage/extensions/napoleon.html#configuration).
 9. Now use [sphinx-apidoc](https://www.sphinx-doc.org/en/master/man/sphinx-apidoc.html) to directly generate a set of documentation very similar to how pdoc3 or another automatic API documentation tool works. You can run `sphinx-apidoc -e -f -o reference ../your_package`. However, we will set this up inside the Sphinx config file instead using `sphinx-apidoc`.
-10. Install apidoc `python -m pip install sphinxcontrib-apidoc` 
-10. Add the following to the Sphinx config file. 
+10. Install apidoc `python -m pip install sphinxcontrib-apidoc`
+11. Add the following to the Sphinx config file.
+
 ```Python
 extensions = [
     'sphinxcontrib.apidoc',
@@ -215,8 +252,9 @@ apidoc_output_dir = 'reference'
 apidoc_excluded_paths = ['tests']
 apidoc_separate_modules = True
 ```
-11. Choose a theme of your liking, setting the Sphinx config, for example `html_theme = 'sphinx_rtd_theme'` (this theme requires installation `python -m pip install sphinx_rtd_theme`)
-11. The next step is optional, and is only needed if you want to include your README on Read the Docs and that README is in Markdown format. Install m2r if your README file is not in RST format `python -m pip install m2r`. If using Sphinx version lower than 3.0.0 simply add `m2r` to your extensions list. Otherwise, (at least until m2r is updated) add the following to the Sphinx config file from [life4.deal-7f33cbc5](https://github.com/life4/deal/commit/7f33cbc595ed31519cefdfaaf6f415dada5acd94)
+
+12. Choose a theme of your liking, by a setting in the Sphinx config, for example `html_theme = 'sphinx_rtd_theme'.` Note, this theme requires installation `python -m pip install sphinx_rtd_theme`.
+13. The next step is optional, and is only needed if you want to include your README on Read the Docs and that README is in Markdown format. Install m2r if your README file is not in RST format `python -m pip install m2r`. If using Sphinx version lower than 3.0.0 simply add `m2r` to your extensions list. Otherwise, (at least until m2r is updated) add the following to the Sphinx config file, from [life4.deal-7f33cbc5](https://github.com/life4/deal/commit/7f33cbc595ed31519cefdfaaf6f415dada5acd94)
 
 ```Python
 from m2r import MdInclude
@@ -230,14 +268,17 @@ def setup(app):
     app.add_directive('mdinclude', MdInclude)
 ```
 
-11. Optionally include your README file in the index. First create a readme.rst file in docs, containing the following (choose include based on your file type):
+14. Optionally include your README file in the index. First create a readme.rst file in the docs folder, containing the following - choose the include based on the README file type:
+
 ```rest
 README
 ===========
 .. mdinclude:: ../README.md
 .. include:: ../README.rst
 ```
-11. Modify the table of contents tree in`index.rst` to contain `readme.rst` (if last step completed) and `reference/modules.rst`
+
+15. Modify the table of contents tree in `index.rst` to contain `readme.rst` (if step 14 was completed) and `reference/modules.rst`
+
 ```rest
 .. toctree::
     :maxdepth: 2
@@ -245,17 +286,21 @@ README
     readme
     reference/modules
 ```
-11. Run `make html` to generate your docs to `docs\_build\html`.
-12. Open `docs\_build\html\index.html` in a web browser, and rejoice!
+
+16. Run `make html` to generate your docs to `docs\_build\html`.
+
+17. Open `docs\_build\html\index.html` in a web browser, and rejoice!
 
 Some extra notes on using Sphinx.
-* The format for inserting links to other items in a Sphinx-built page is:
-`.. reference_type:: reference_location` 
-For example, to link to automatically generated module documentation, `reference_type` should be replaced by `automodule` and `reference_location` should be the name  of the module linked to. See more at [Sphinx domains](https://www.sphinx-doc.org/en/master/usage/restructuredtext/domains.html#cross-referencing-python-objects) and [Autodoc](https://www.sphinx-doc.org/en/master/usage/extensions/autodoc.html#module-sphinx.ext.autodoc).
-* An alternative to the autodoc system using apidoc is to use the [autosummary](https://www.sphinx-doc.org/en/master/usage/extensions/autosummary.html) extension, which creates a page for each function or class in a table. For very large codebases, this is likely preferable.
+
+- The format for inserting links to other items in a Sphinx-built page is:
+  `.. reference_type:: reference_location`
+  For example, to link to automatically generated module documentation, `reference_type` should be replaced by `automodule` and `reference_location` should be the name of the module linked to. See more at [Sphinx domains](https://www.sphinx-doc.org/en/master/usage/restructuredtext/domains.html#cross-referencing-python-objects) and [Autodoc](https://www.sphinx-doc.org/en/master/usage/extensions/autodoc.html#module-sphinx.ext.autodoc).
+- An alternative to the autodoc system using apidoc is to use the [autosummary](https://www.sphinx-doc.org/en/master/usage/extensions/autosummary.html) extension, which creates a page for each function or class in a table. For very large codebases, this is likely preferable.
 
 ## Creating a Read the Docs website using Sphinx documentation
-A small bit of setup is required in your online repository. We need to create a [Read the docs config file](https://docs.readthedocs.io/en/stable/config-file/v2.html). Most likely you can just add the `.readthedocs.yml` and `docs\requirements.txt` from [PythonTemplate](https://github.com/seankmartin/PythonTemplate) to your project if you have been following this guide. You may need to add extra doc building requirements to `docs\requirements.txt`, such as the commonly used [recommonmark](https://recommonmark.readthedocs.io/en/latest/index.html).
+
+A small bit of setup is required in your online repository. We need to create a [Read the docs config file](https://docs.readthedocs.io/en/stable/config-file/v2.html). Most likely you can just add the `.readthedocs.yml` and `docs\requirements.txt` from [PythonTemplate](https://github.com/seankmartin/PythonTemplate) to your project if you have been following this guide. You may need to add extra doc building requirements to `docs\requirements.txt`, such as the commonly used [recommonmark](https://recommonmark.readthedocs.io/en/latest/index.html). After this, follow these steps:
 
 1. Create an account on [Read the Docs](https://readthedocs.org/).
 2. Import your github repository on your Read the Docs profile.
@@ -265,15 +310,16 @@ A small bit of setup is required in your online repository. We need to create a 
 After all that hard work, you should have something like my [PythonTemplate Read the Docs](https://pythontemplate.readthedocs.io/en/latest/index.html) - though hopefully your real project is a bit prettier.
 
 ## Uploading your package to PyPI
+
 Your code is pretty, your code has tests, and your code has documentation, what next?
 
 You will need to have a `setup.py` file and a `setup.cfg` file.
 It is also recommended to have a `README.md` or `README.rst` file and a `LICENSE` file.
-Examples of all these are available on my github TODO provide link to my template python.
-
+Examples of all these are available on my [GitHub Python template](https://github.com/seankmartin/PythonTemplate/)
 
 To upload to PyPI, make an account on PyPI, and then follow these steps:
-```shell
+
+```bash
 python -m pip install --upgrade setuptools
 python -m pip install --upgrade twine
 rm -rf dist
@@ -283,12 +329,15 @@ twine upload dist/* -u USERNAME -p  PASSWORD --verbose
 ```
 
 ## Building an executable
-So, your code has a GUI and you want to provide an executable - read on!
-Two main options, using TODO check its name, think it is pybuild or something, have the name around.
-The other one is to use the fbs build system, which is actually very nice.
+
+Say your code has a GUI and you want to provide an executable.
+Two main options, the first is using [pyinstaller](https://pyinstaller.readthedocs.io/en/stable/).
+The other one is to use the [fbs build system](https://build-system.fman.io/), which is further described on this website [here](https://seankmartin.netlify.app/python/using_fbs/).
 
 ## Further reading
+
 1. [A more in depth guide to flake8](https://medium.com/python-pandemonium/what-is-flake8-and-why-we-should-use-it-b89bd78073f2)
 2. [A more in depth guide to PyPI packaging](https://medium.com/@joel.barmettler/how-to-upload-your-python-package-to-pypi-65edc5fe9c56)
 3. [An idiots guide to Sphinx documentation](https://samnicholls.net/2016/06/15/how-to-sphinx-readthedocs/#disqus_thread)
 4. [The actual Sphinx guide instead of this garbage](https://www.sphinx-doc.org/en/master/usage/quickstart.html)
+5. [Flit](https://docs.python.org/3/library/ast.html) and [Poetry](https://python-poetry.org/) as alternative ways to a `setup.py` file for installing a package and uploading to PyPI.
