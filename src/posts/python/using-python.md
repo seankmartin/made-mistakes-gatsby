@@ -20,7 +20,7 @@ An example repository using these features is available on my GitHub at [PythonT
 Following the steps in this article will greatly boost the sustainability of your software.
 [The Software Sustainability Institute](https://www.software.ac.uk/) has a free checklist for evaluating the sustainability of your software to compare against.
 
-## Formatting
+## Formatting and Linting
 
 ### Why use a formatter?
 
@@ -62,7 +62,7 @@ Here are my thoughts on these:
 
 Regardless of your choice, a good formatter should produce an [Abstract Syntax Tree](https://docs.python.org/3/library/ast.html) on the formatted code that is equivalent to the original. I also suggest running pydocstyle and docformatter to get your docstrings in check.
 
-## Linting
+### Linting
 
 _linting_ means running a tool on your code to check for basic quality adherence.
 For example, linting can pick up import statements that are never used, lines that are too long, or syntax errors.
@@ -71,7 +71,7 @@ To perform linting in Python, there are good options, such as [Flake8](https://g
 Bandit is a little different since it is aimed towards security issues.
 I recommend using flake8 since it has a low false positive rate.
 
-## Running Formatting and Linting
+### Running the tools
 
 The way these tools work is similar, so an example is shown below for autopep8 and flake8, with docformatter and pydocstyle.
 Usually `-r` indicates recursive, `-i` indicates in place, and any of these tools can be run with the `-h` flag to get more information.
@@ -199,7 +199,9 @@ Here describe pytest (or otherwise) basically.
 
 Here describe circleCI and maybe github hooks. Or perhaps Travis-CI is easier.
 
-## Creating a simple website on GitHub Pages with pdoc3
+## Hosting Documentation
+
+### Creating a simple website on GitHub Pages with pdoc3
 
 I will describe the process of creating a Read the Docs website.
 However, I'd like to point out a simpler alternative to hosting your python project API docs by using [pdoc3](https://pdoc3.github.io/pdoc/) and GitHub pages.
@@ -216,7 +218,7 @@ This is simple and requires minimal effort.
 
 Overall, this method is a simple way of automatically turning your docstrings into a documentation website, but it lacks flexibility - that is where Sphinx comes in.
 
-## Creating Documentation using Sphinx
+### Creating Documentation using Sphinx
 
 Firstly, you will need to create your documentation, which we will use [Sphinx](https://www.sphinx-doc.org/en/master/) for.
 
@@ -298,7 +300,7 @@ Some extra notes on using Sphinx.
   For example, to link to automatically generated module documentation, `reference_type` should be replaced by `automodule` and `reference_location` should be the name of the module linked to. See more at [Sphinx domains](https://www.sphinx-doc.org/en/master/usage/restructuredtext/domains.html#cross-referencing-python-objects) and [Autodoc](https://www.sphinx-doc.org/en/master/usage/extensions/autodoc.html#module-sphinx.ext.autodoc).
 - An alternative to the autodoc system using apidoc is to use the [autosummary](https://www.sphinx-doc.org/en/master/usage/extensions/autosummary.html) extension, which creates a page for each function or class in a table. For very large codebases, this is likely preferable.
 
-## Creating a Read the Docs website using Sphinx documentation
+### Creating a Read the Docs website using Sphinx documentation
 
 A small bit of setup is required in your online repository. We need to create a [Read the docs config file](https://docs.readthedocs.io/en/stable/config-file/v2.html). Most likely you can just add the `.readthedocs.yml` and `docs\requirements.txt` from [PythonTemplate](https://github.com/seankmartin/PythonTemplate) to your project if you have been following this guide. You may need to add extra doc building requirements to `docs\requirements.txt`, such as the commonly used [recommonmark](https://recommonmark.readthedocs.io/en/latest/index.html). After this, follow these steps:
 
@@ -309,7 +311,9 @@ A small bit of setup is required in your online repository. We need to create a 
 
 After all that hard work, you should have something like my [PythonTemplate Read the Docs](https://pythontemplate.readthedocs.io/en/latest/index.html) - though hopefully your real project is a bit prettier.
 
-## Uploading your package to PyPI
+## Packaging code
+
+### Uploading your package to PyPI
 
 Your code is pretty, your code has tests, and your code has documentation, what next?
 
@@ -328,7 +332,7 @@ twine check dist/*
 twine upload dist/* -u USERNAME -p  PASSWORD --verbose
 ```
 
-## Building an executable
+### Building an executable
 
 Say your code has a GUI and you want to provide an executable.
 Two main options, the first is using [pyinstaller](https://pyinstaller.readthedocs.io/en/stable/).
