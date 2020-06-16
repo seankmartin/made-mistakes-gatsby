@@ -199,7 +199,7 @@ Here describe pytest (or otherwise) basically.
 
 Here describe circleCI and maybe github hooks. Or perhaps Travis-CI is easier.
 
-## Hosting Documentation
+## Hosting documentation
 
 ### Creating a simple website on GitHub Pages with pdoc3
 
@@ -218,14 +218,12 @@ This is simple and requires minimal effort.
 
 Overall, this method is a simple way of automatically turning your docstrings into a documentation website, but it lacks flexibility - that is where Sphinx comes in.
 
-### Creating Documentation using Sphinx
+### Creating documentation using Sphinx
 
-Firstly, you will need to create your documentation, which we will use [Sphinx](https://www.sphinx-doc.org/en/master/) for.
-
-1. Install Sphinx `python -m pip install Sphinx`.
+1. Install [Sphinx](https://www.sphinx-doc.org/en/master/) `python -m pip install Sphinx`.
 2. Open the main directory of your python project in a terminal.
 3. Make a folder called docs and move to that directory.
-4. In the docs folder, run `sphinx-quickstart`. Name your package as appropriate, and setup as required. Be sure to select `y` for the auto documentation setting. If you forget to enable autodoc, you must add `sphinx.ext.autodoc` to the Sphinx config file.
+4. In the docs folder, run `sphinx-quickstart`. Name your package as appropriate, and setup as required. Most of the default options are fine. Be sure to select `y` for the auto documentation setting. If you forget to enable autodoc, you must add `sphinx.ext.autodoc` to the Sphinx config file. I would also recommend the `sphinx.ext.viewcode` extension.
 5. Open the Sphinx config file `docs/conf.py`.
 6. Under the Path Setup section of the config file, add the following code
 
@@ -240,7 +238,7 @@ sys.path.append(package_location)
 
 7. I'm going to assume you are not using RST docstrings, which is what Sphinx supports by default. So, add `'sphinx.ext.napoleon'` to the extensions list in the Sphinx config file. Using the [napoleon extension](https://www.sphinx-doc.org/en/master/usage/extensions/napoleon.html), you can pull documentation from docstrings that follow the NumPy or Google conventions.
 8. Update the napoleon configuration following [official docs](https://www.sphinx-doc.org/en/master/usage/extensions/napoleon.html#configuration).
-9. Now use [sphinx-apidoc](https://www.sphinx-doc.org/en/master/man/sphinx-apidoc.html) to directly generate a set of documentation very similar to how pdoc3 or another automatic API documentation tool works. You can run `sphinx-apidoc -e -f -o reference ../your_package`. However, we will set this up inside the Sphinx config file instead using `sphinx-apidoc`.
+9. At this point, you could use [sphinx-apidoc](https://www.sphinx-doc.org/en/master/man/sphinx-apidoc.html) to directly generate a set of documentation.This is similar to how pdoc3 or another automatic API documentation tool works. You could run `sphinx-apidoc -e -f -o reference ../your_package` to achieve this. Instead, we will set this up inside the Sphinx config file using `sphinx-apidoc` so that the automatic documentation is part of the build process.
 10. Install apidoc `python -m pip install sphinxcontrib-apidoc`
 11. Add the following to the Sphinx config file.
 
@@ -249,6 +247,8 @@ extensions = [
     'sphinxcontrib.apidoc',
     # ...
 ]
+
+# -- Apidoc configuration ----------------------------------------------------
 apidoc_module_dir = '../your_package'
 apidoc_output_dir = 'reference'
 apidoc_excluded_paths = ['tests']
@@ -292,6 +292,14 @@ README
 16. Run `make html` to generate your docs to `docs\_build\html`.
 
 17. Open `docs\_build\html\index.html` in a web browser, and rejoice!
+
+18. If you are using git for version control, make sure that your `.gitignore` file contains the following
+
+```text
+# Sphinx documentation
+docs/_build/
+docs/reference/
+```
 
 Some extra notes on using Sphinx.
 
