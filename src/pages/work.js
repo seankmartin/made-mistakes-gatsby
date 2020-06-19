@@ -36,8 +36,7 @@ const WorksPage = ({ data }) => {
         <div className={style.content}>
           <div className={style.intro}>
             <p>
-              A selection of things I&rsquo;ve designed, illustrated, and
-              developed.
+              A selection of things I have developed and papers I have written.
             </p>
           </div>
           <h2 className={style.subHeading}>

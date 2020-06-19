@@ -13,12 +13,6 @@
   html: |
     <p>An archive of posts related to <a href="https://www.gatsbyjs.org"><strong>Gatsby</strong></a>, a framework based on React that helps developers build blazing fast websites and apps.</p>
 
-- id: mastering-paper
-  name: Mastering Paper for iOS
-  excerpt: Collection of tutorials written by an avid iPad illustrator to help you master Paper for iOS.
-  html: |
-    <p>Collection of tutorials written by an avid iPad illustrator to help you master <a href="https://www.fiftythree.com/paper">Paper for iOS</a>.</p>
-
 - id: notes
   name: Notes
   excerpt: Small, bite sized content I've written.
@@ -33,6 +27,14 @@
   excerpt: Who are you who are so wise in the ways of science?
   html: <p><a href="http://www.montypython.net/scripts/HG-witchscene.php">Who are you who are so wise in the ways of science?</a></p>
 
+- id: computing
+  excerpt: Things about PC building, Operating systems, and more.
+  html: <p>Things about PC building, Operating systems, and more.</p>
+
+- id: neuroscience
+  excerpt: Mysteries of the brain, according to the brain.
+  html: <p>Mysteries of the brain, according to the brain.</p>
+
 - id: tutorial
   excerpt:
   html:
@@ -43,10 +45,9 @@
 
 - id: web dev
   excerpt: I guess I can kind of do it since this exists...
-  html: I guess I can kind of do it since this exists...
+  html: <p>I guess I can kind of do it since this exists...</p>
 
 - id: work
-  name: Works
-  excerpt: A selection of things I’ve designed, illustrated, and developed.
-  html: |
-    <p>A selection of things I’ve designed, illustrated, and developed.</p>
+  name: Work
+  excerpt: A selection of things I have worked on.
+  html: <p>A selection of things I have worked on</p>
