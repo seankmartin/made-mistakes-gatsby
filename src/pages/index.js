@@ -42,11 +42,6 @@ const HomePage = ({ data }) => {
               This site is built with Gatsby and made possible by the GitHub source code very kindly shared by Michael Rose, go check out his website <a href="https://mademistakes.com">Made Mistakes</a>.
             </p>
           </div>
-          <Img
-            fluid={data.aboutImage.childImageSharp.fluid}
-            className={style.cover}
-            backgroundColor="var(--input-background-color)"
-          />
         </div>
         <div className={style.content}>
           <h2 className={style.subHeading}>
@@ -119,7 +114,7 @@ const HomePage = ({ data }) => {
                   key="articles-home-link"
                   title="Articles"
                   path="/articles/"
-                  excerpt="<p>Long form writing mostly about design and web development.</p>"
+                  excerpt="<p>Long form writing, mostly about coding.</p>"
                 />
               </li>
               <li key="notes">
@@ -127,7 +122,7 @@ const HomePage = ({ data }) => {
                   key="notes-home-link"
                   title="Notes"
                   path="/notes/"
-                  excerpt="<p>Thoughts, inspiration, mistakes, and other minutia you&rsquo;d find in a blog.</p>"
+                  excerpt="<p>Short style posts, more similar to blog bosts.</p>"
                 />
               </li>
               <li key="works">
@@ -135,8 +130,7 @@ const HomePage = ({ data }) => {
                   key="works-home-link"
                   title="Works"
                   path="/work/"
-                  excerpt="<p>Hand-picked selection of things I've designed, illustrated,
-                  and developed.</p>"
+                  excerpt="<p>A selection of things I've developed and written.</p>"
                 />
               </li>
               <li key="contact">
@@ -144,22 +138,21 @@ const HomePage = ({ data }) => {
                   key="contact-home-link"
                   title="Contact"
                   path="/contact/"
-                  excerpt="<p>Preferred methods of sending questions, messages, and
-                  love letters to me.</p>"
+                  excerpt="<p>Feel free to get in touch with me here.</p>"
                 />
               </li>
               <li key="faqs">
                 <Entry
                   key="faqs-home-link"
-                  title="Frequently asked questions"
+                  title="FAQ"
                   path="/faqs/"
-                  excerpt="<p>There&rsquo;s no such thing as a dumb question&hellip;</p>"
+                  excerpt="<p>At the moment, its a placeholder.</p>"
                 />
               </li>
               <li key="topics">
                 <Entry
                   key="topics-home-link"
-                  title="All topics"
+                  title="All posts"
                   path="/tag/"
                   excerpt="<p>Archive of all posts organized by topic.</p>"
                 />
