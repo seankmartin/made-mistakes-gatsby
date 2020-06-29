@@ -4,7 +4,7 @@ excerpt: "How to set up Gatsby and publish your built site to Netlify."
 date: 2020-05-25
 path: /web-dev/installing-gatsby/
 image: ../../images/gatsby.jpg
-categories: [articles]
+categories: [notes]
 tags: [web dev, coding, gatsby]
 toc: true
 comments: true
@@ -19,7 +19,7 @@ featured: true
 ## Installation steps
 If you are on Windows, I highly recommend installing [Chocolatey](https://chocolatey.org/) or [Scoop](https://scoop.sh/) as it will make the following installations much easier and a bit more Unix like. You could read a lot about the differences in these programs, so I guess just pick the one you like the look of!
 
-1. Install node.js, a javascript runtime, following the official docs to [install via a package manager](https://nodejs.org/en/download/package-manager/). I ran into an error with node not correctly adding to my bash startup files. If you find the same, copy the relevant output from the installation to a bash startup and source the same file.
+1. Install node.js, a javascript runtime, following the official docs to [install via a package manager](https://nodejs.org/en/download/package-manager/). I ran into an error with node not correctly adding to my bash startup files. If you find the same, copy the relevant output from the installation to a bash startup and source the same file. However, on Linux, it is probably just as easier to install from the [binary archive](https://github.com/nodejs/help/wiki/Installation)
 1. I would suggest also installing yarn, a cool package manager following the instructions on the [official docs](https://classic.yarnpkg.com/en/docs/install/#debian-stable). As an example, for Chocolatey these commands are
 
 ```shell

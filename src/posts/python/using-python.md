@@ -193,7 +193,7 @@ my_code/ugly_python.py:15 in public function `main`:
 
 ## Testing
 
-Here describe pytest (or otherwise) basically.
+Here describe pytest (or otherwise) basically. Perhaps also doctests.
 
 ## Continuous integration
 
@@ -344,7 +344,7 @@ twine upload dist/* -u USERNAME -p  PASSWORD --verbose
 
 Say your code has a GUI and you want to provide an executable.
 Two main options, the first is using [pyinstaller](https://pyinstaller.readthedocs.io/en/stable/).
-The other one is to use the [fbs build system](https://build-system.fman.io/), which is further described on this website [here](https://seankmartin.netlify.app/python/using_fbs/).
+The other one is to use the [fbs build system](https://build-system.fman.io/), which is further described on this website [here](https://seankmartin.netlify.app/python/using_fbs/). The fbs build system is simple, but requires specific versions of Python and PyQt, which can be a significant limitation.
 
 ## Further reading
 
