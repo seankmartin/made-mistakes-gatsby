@@ -55,6 +55,9 @@ with [Gatsby](https://www.gatsbyjs.org/), [Travis CI](https://travis-ci.org/),  
    └── staticman.yml
    ```
 
+### Images
+Images for featured articles should be 1600 x 900 pixels.
+
 ### Posts and Pages
 
 Posts are all Markdown files and should be placed in `src/posts/` and filed under the appropriate category. Pages can be Markdown or `.js` files placed in `src/pages/`.
