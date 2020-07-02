@@ -11,7 +11,7 @@ comments: false
 comments_locked: false
 last_modified_at: 2020-05-26T12:12:14
 hide_meta: false
-featured: true
+featured: false
 ---
 ## List of Tools
 - **Git and GitHub**: Host the static code.

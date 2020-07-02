@@ -11,7 +11,7 @@ comments: false
 comments_locked: false
 last_modified_at: 2020-06-19T21:20:18
 hide_meta: false
-featured: false
+featured: true
 published: true
 ---
 
