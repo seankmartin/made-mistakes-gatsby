@@ -136,6 +136,7 @@ But very simply:
 
     ```YAML
     # Contents of .travis.yml
+    language: python
     python:
         - "3.8"
     install:
