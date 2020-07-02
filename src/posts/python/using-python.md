@@ -79,9 +79,50 @@ Furthermore, most of these tools can be integrated into your favourite code edit
 
 See a full example over [here](../formatting_example/)
 
-## Testing
+## Testing with PyTest
 
-Here describe pytest (or otherwise) basically. Perhaps also doctests.
+One can do many complex things with [PyTest](https://docs.pytest.org/en/latest/), and this will be expanded later.
+But very simply:
+
+1. Install PyTest `python -m pip install pytest`.
+2. Make a directory called tests and place your tests in there. Save them as `test_*.py` or `*_test.py` to allow for automatic discovery. For example, a test could be
+
+    ```Python
+    def test_adding():
+        # This will pass
+        assert(1 + 1 == 2)
+
+        # This will fail
+        assert(1 + 1 != 2)
+    ```
+
+3. Run PyTest `python -m pytest`.
+4. You can also run doctests in your main module from PyTest. For example, set up a [doctest](https://docs.python.org/3/library/doctest.html)
+
+    ```Python
+    def add(a, b):
+        """
+        Add two objects.
+
+        >>> add(1, 2)
+        3
+        >>> add([1, 2], [3, 4])
+        [1, 2, 3, 4]
+
+        """
+        return a + b
+    ```
+5. Then run PyTest `python -m pytest --doctest-modules`.
+6. You can add this as a permanent setting
+
+    ```toml
+    # content of pytest.ini
+    [pytest]
+    addopts = --doctest-modules
+    ```
+
+7. See more options here on [doctest](https://docs.pytest.org/en/stable/doctest.html).
+
 
 ## Continuous integration
 
