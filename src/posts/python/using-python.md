@@ -264,7 +264,7 @@ A small bit of setup is required in your online repository. We need to create a 
 
 After all that hard work, you should have something like my [PythonTemplate Read the Docs](https://pythontemplate.readthedocs.io/en/latest/index.html) - though hopefully your real project is a bit prettier.
 
-## Packaging code
+## Distributing code
 
 ### Uploading your package to PyPI
 
@@ -290,6 +290,36 @@ twine upload dist/* -u USERNAME -p  PASSWORD --verbose
 Say your code has a GUI and you want to provide an executable.
 Two main options, the first is using [pyinstaller](https://pyinstaller.readthedocs.io/en/stable/).
 The other one is to use the [fbs build system](https://build-system.fman.io/), which is further described on this website [here](https://seankmartin.netlify.app/python/using_fbs/). The fbs build system is simple, but requires specific versions of Python and PyQt, which can be a significant limitation.
+
+I would generally recommend pyinstaller for flexibility. Here is example build steps for pyinstaller:
+1. Create a file named `cli.py` which will run the main GUI of the application.
+2. Install pyinstaller `python -m pip install pyinstaller`.
+3. The basic build process is `python -m PyInstaller cli.py`.
+4. However, I recommend checking out the options in `python -m PyInstaller -h`.
+5. For example some options I use regularly are
+    * `--noconfirm` to automatically overwrite the previous build.
+    * `--nowindow` on Mac and Windows to avoid a cmd window.
+    * `--onefile` the default is to output a folder for the executable, but you can instruct one big file to be created instead.
+    * `--log-level WARN` the default INFO is a little wordy for my liking.
+    * `--name $NAME` what to name the output.
+    * `--hidden-import $PACKAGE`  sometimes a necessary package for your program is not picked up, use this to fix that.
+    * `--icon $PATH_TO_ICON` a `.ico` file if you have one.
+    * `--additional-hooks-dir=$PATH_TO_ADDITIONAL_HOOKS` this is a little complicated, but for an example where it might be needed, look at [sklearn in onefile mode](https://stackoverflow.com/questions/20602721/pyinstaller-a-module-is-not-included-into-onefile-but-works-fine-with-oned).
+
+6. Here is the build script I use for [NeuroChaT](https://github.com/shanemomara/NeuroChaT).
+
+    ```batch
+    @echo off
+    python -m PyInstaller ^
+    --noconfirm --log-level WARN ^
+    --onefile --nowindow ^
+    --hidden-import xlrd ^
+    --hidden-import openpyxl ^
+    --name NeuroChaT ^
+    --icon NeuroChaT.ico ^
+    --additional-hooks-dir=hooks ^
+    cli.py
+
 
 ## Further reading
 
