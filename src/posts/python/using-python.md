@@ -124,9 +124,25 @@ But very simply:
 7. See more options here on [doctest](https://docs.pytest.org/en/stable/doctest.html).
 
 
-## Continuous integration
+## Continuous integration with Travis-CI
 
-Here describe circleCI and maybe github hooks. Or perhaps Travis-CI is easier.
+[Travis CI](https://travis-ci.org/) is great, and I would highly recommend it.
+
+1. Login to Travis CI with your GitHub credentials.
+2. Create a file called `.travis.yml` in your repository that you want to add to Travis CI, which will manage the configuration of Travis CI. Some examples are [here](https://docs.travis-ci.com/user/language-specific/).
+3. Link the GitHub repository to Travis CI.
+4. Push a commit that contains `.travis.yml` to trigger the first build.
+5. As an example, to get Travis to run pytest
+
+    ```YAML
+    # Contents of .travis.yml
+    python:
+        - "3.8"
+    install:
+        - pip install -r requirements.txt
+    script:
+        - pytest
+    ```
 
 ## Hosting documentation
 
