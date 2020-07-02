@@ -1,6 +1,6 @@
 ---
 title: 'Getting your python code ready for the world'
-excerpt: 'A lengthy article on how to clean up your python code and show it to the world.'
+excerpt: 'How to clean up your python code and distribute it.'
 date: 2020-05-22
 path: /python/getting_your_code_out_there/
 image: ../../images/python_regius.jpg
@@ -9,7 +9,7 @@ tags: [python, coding]
 toc: true
 comments: true
 comments_locked: false
-last_modified_at: 2020-06-11T17:45:14
+last_modified_at: 2020-07-02T14:40:46
 hide_meta: false
 featured: true
 ---
@@ -77,119 +77,7 @@ The way these tools work is similar, so an example is shown below for autopep8 a
 Usually `-r` indicates recursive, `-i` indicates in place, and any of these tools can be run with the `-h` flag to get more information.
 Furthermore, most of these tools can be integrated into your favourite code editor.
 
-```bash
-python -m pip install yapf flake8 docformatter pydocstyle
-export my_code_file_or_directory=var
-python -m autopep8 $my_code_file_or_directory -r -i
-python -m docformatter $my_code_file_or_directory -r -i --blank --pre-summary-newline
-python -m flake8 $my_code_file_or_directory
-python -m pydocstyle $my_code_file_or_directory
-```
-
-For example, this code does not look great:
-
-```Python
-"""Let's all write some really ugly python. We can start off with a line that is just way too long."""
-
-import numpy as np
-import matplotlib.pyplot as plt
-from math import ceil, floor
-from pprint import pformat
-
-def main(              ):
-	"""This calculates some mad stuff.
-
-	Parameters
-	----------
-	None
-
-	Returns
-	-------
-	tuple (list, int)
-	"""
-	foo = [((1+2 * 25) * i, 100) for i in range(0, 20) if i%2==0] # Here is a helpful message to explain this madness
-	bar = ceil( foo[3][  0]* 2)
-	return sorted(foo, key=lambda x: x[0] % x[1]), bar * bar + 10
-
-if __name__ == "__main__":
-	# If invoked as the main file, will call main()
-	result = main()
-	print("{}\nthe output from the main was long, but there it is!".format(pformat(result)))
-	user_inp = input("Would you like to see just how great that was again? (y/n)\n")
-	if user_inp=="":
-		print("Empty input, goodbye then!")
-	elif user_inp.lower()=="y":
-		print(    "Too bad, good things only come once.")
-	elif user_inp.lower()=="n":
-		print("Oh right, very well :(")
-	else:
-		print("Sorry I didn\'t get {}, leaving!".format(user_inp))
-```
-
-After running yapf and docformatter, the output is:
-
-```Python{numberLines: true}
-"""
-Let's all write some really ugly python.
-
-We can start off with a line that is just way too long.
-
-"""
-
-import numpy as np
-import matplotlib.pyplot as plt
-from math import ceil, floor
-from pprint import pformat
-
-
-def main():
-    """
-    This calculates some mad stuff.
-
-    Parameters
-    ----------
-    None
-
-    Returns
-    -------
-    tuple (list, int)
-
-    """
-    foo = [((1 + 2 * 25) * i, 100) for i in range(0, 20)
-           if i % 2 == 0]  # Here is a helpful message to explain this madness
-    bar = ceil(foo[3][0] * 2)
-    return sorted(foo, key=lambda x: x[0] % x[1]), bar * bar + 10
-
-
-if __name__ == "__main__":
-    # If invoked as the main file, will call main()
-    result = main()
-    print("{}\nthe output from the main was long, but there it is!".format(
-        pformat(result)))
-    user_inp = input(
-        "Would you like to see just how great that was again? (y/n)\n")
-    if user_inp == "":
-        print("Empty input, goodbye then!")
-    elif user_inp.lower() == "y":
-        print("Too bad, good things only come once.")
-    elif user_inp.lower() == "n":
-        print("Oh right, very well :(")
-    else:
-        print("Sorry I didn't get {}, leaving!".format(user_inp))
-
-```
-
-Then, running flake8 and pydocstyle gives the following output:
-
-```bash
-➜  Temp python3 -m flake8 my_code
-my_code/ugly_python.py:8:1: F401 'numpy as np' imported but unused
-my_code/ugly_python.py:9:1: F401 'matplotlib.pyplot as plt' imported but unused
-my_code/ugly_python.py:10:1: F401 'math.floor' imported but unused
-➜  Temp python3 -m pydocstyle my_code
-my_code/ugly_python.py:15 in public function `main`:
-        D401: First line should be in imperative mood; try rephrasing (found 'This')
-```
+See a full example over [here](../formatting_example/)
 
 ## Testing
 
