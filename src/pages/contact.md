@@ -3,10 +3,11 @@ title: 'Contact'
 path: /contact/
 date: 2016-08-26
 last_modified_at: 2019-12-31T19:24:48-05:00
-excerpt: 'Preferred methods of sending your questions, inquires, messages, and love letters to me.'
+excerpt: 'Feel free to pop me a message!'
 ---
 
-Have a question for me? Before sending, please read my [frequently asked questions section](/faqs/) first to make sure I haven't already answered it. For anything else use the form below.
+Have a question, comment, or idea for me? Then, please send a message using the form below!
+If anything is asked regularly, I'll put the answer into the [frequently asked questions section](/faqs/).
 
 <form id="form1" name="form1" accept-charset="UTF-8" autocomplete="off" enctype="multipart/form-data" method="post" novalidate action="&#104;&#116;&#116;&#112;&#115;&#58;&#47;&#47;&#102;&#111;&#114;&#109;&#115;&#112;&#114;&#101;&#101;&#46;&#105;&#111;&#47;&#109;&#97;&#114;&#116;&#105;&#110;&#115;&#55;&#64;&#116;&#99;&#100;&#46;&#105;&#101;&#13;&#10;&#13;&#10;">
   <div class="form-group">
