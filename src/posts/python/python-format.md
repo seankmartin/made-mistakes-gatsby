@@ -2,7 +2,7 @@
 title: 'Example Python formatting and linting'
 excerpt: 'Make code look less bad.'
 date: 2020-07-02
-path: /python/formatting_example/
+path: /python/formatting-example/
 image: ../../images/python_regius.jpg
 categories: [notes]
 tags: [python, coding]

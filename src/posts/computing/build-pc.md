@@ -2,7 +2,7 @@
 title: 'Building a Desktop PC.'
 excerpt: 'Picking parts and installation.'
 date: 2020-06-19
-path: /computing/build-pc/
+path: /computing/build-a-pc/
 image: ../../images/keyboard.jpg
 categories: [notes]
 tags: [computing]

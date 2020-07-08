@@ -2,7 +2,7 @@
 title: 'Using the fman build system.'
 excerpt: 'How to build python code with fbs.'
 date: 2020-05-27
-path: /python/using_fbs/
+path: /python/using-fbs/
 image: ../../images/python_regius.jpg
 categories: [notes]
 tags: [python, coding]

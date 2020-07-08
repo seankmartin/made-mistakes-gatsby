@@ -2,7 +2,7 @@
 title: 'Getting your python code ready for the world'
 excerpt: 'How to clean up your python code and distribute it.'
 date: 2020-05-22
-path: /python/getting_your_code_out_there/
+path: /python/getting-your-code-out-there/
 image: ../../images/python_regius.jpg
 categories: [articles]
 tags: [python, coding]

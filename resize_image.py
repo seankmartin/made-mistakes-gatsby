@@ -24,11 +24,7 @@ def downscale_image(
 if __name__ == "__main__":
     parser = argparse.ArgumentParser("Command line args")
     parser.add_argument(
-        "--path",
-        "-p",
-        type=str,
-        required=True,
-        help="Path to the image or folder of images",
+        "path", type=str, help="Path to the image or folder of images",
     )
     parser.add_argument(
         "--in_place", "-i", action="store_true", help="In-place resizing"
