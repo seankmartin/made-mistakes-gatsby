@@ -18,7 +18,7 @@ featured: true
 To understand Docker, it is necessary to understand containers. 
 A container is a method of bundling together an entire runtime environment for an application, decoupling it from the application itself. 
 They are a bit like a virtual machine, but there is no guest operating system, as the container sits right on top of your own host operating system.
-Docker has a nice diagram for this in their documentation described containers [here](https://www.docker.com/resources/what-container).
+Docker has a nice diagram for this in their documentation describing containers [here](https://www.docker.com/resources/what-container).
 Using containers brings many benefits, but in essence, you get an isolated consistent environment to run your application from that is lightweight and easy to share.
 
 Docker is by far the most popular container format out there.
@@ -32,10 +32,43 @@ Docker is free to use for individuals and developments teams for public reposito
     sudo docker run hello-world
     sudo docker image ls
     ```
-3. Get started with an actual docker image to test.
-4. For example, you could try the [nvidia docker image ](https://github.com/NVIDIA/nvidia-docker/blob/master/README.md#quickstart).
-5. There is a reference [here](https://docs.docker.com/engine/reference/run/) for the run command.
+3. There is a reference [here](https://docs.docker.com/engine/reference/run/) for the run command.
+4. Get started with an actual docker image to test.
+5. For example, you could try the [nvidia docker image](https://github.com/NVIDIA/nvidia-docker/blob/master/README.md#quickstart), or create your own container following the steps below.
 
+
+## Creating a docker container
+1. Find a docker container to use as a base at [Docker Hub](https://hub.docker.com/). For example, here is the image for [Python](https://hub.docker.com/_/python).
+2. Create a file called `dockerfile` (with no extension), place it in your code repository, and add the following to it.
+    ```docker
+    # Firstly, FROM, the location in step 1, python for example
+    FROM python:3
+
+    # What the working directory in the image filesystem (not the host) should be
+    WORKDIR /usr/src/app
+
+    # COPY the relevant files
+    # This operation obeys a .dockerignore (same rules as a git ignore)
+    COPY . .
+
+    # Set any required environment variables, for e.g
+    # ENV PIP_NO_CACHE_DIR=1
+    
+    # Install anything needed
+    RUN python -m pip --no-cache-dir install .
+
+    # Specify the command the container should run by default
+    CMD ["python", "./cli.py"]
+    ```
+3. Build and run the container with the commands from the directory the dockerfile is in
+    ```shell
+    docker build --tag my_python_app:1.0 .
+    docker run -it --rm --name my_running_name my_python_app:1.0
+    ```
+
+## Share your image on Docker Hub
+1. Obtain a Docker ID.
+2. [Create a Repository on Docker Hub](https://hub.docker.com/repository/create).
 
 ## Further considerations
 By default, docker stores images in `/var`on linux.
@@ -45,7 +78,7 @@ Alternatively, you could keep docker on `/var` and regularly clean it with
 docker system prune -a
 ```
 
-You may need to run all docker commands as sudo. The easiest fix for this seems to be
+You may need to run all docker commands as sudo. The easiest fix for this seems to be the below. Though you will need to run it occasionally to keep the setting.
 ```shell
 sudo chmod 666 /var/run/docker.sock
 ```
