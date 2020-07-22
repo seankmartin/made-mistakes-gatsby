@@ -68,7 +68,9 @@ Docker is free to use for individuals and developments teams for public reposito
 
 ## Share your image on Docker Hub
 1. Obtain a Docker ID.
-2. [Create a Repository on Docker Hub](https://hub.docker.com/repository/create).
+2. Login to Docker `docker login`.
+3. Tag the image `docker tag my_image my_docker_id/my_image[:version1.0]`.
+4. Push the image to Docker Hub `docker push my_docker_id/my_image`.
 
 ## Further considerations
 By default, docker stores images in `/var`on linux.
