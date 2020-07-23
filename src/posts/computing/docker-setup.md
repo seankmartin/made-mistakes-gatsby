@@ -69,8 +69,46 @@ Docker is free to use for individuals and developments teams for public reposito
 ## Share your image on Docker Hub
 1. Obtain a Docker ID.
 2. Login to Docker `docker login`.
-3. Tag the image `docker tag my_image my_docker_id/my_image[:version1.0]`.
-4. Push the image to Docker Hub `docker push my_docker_id/my_image`.
+3. Tag the image `docker tag local-image:tagname new-repo:tagname`.
+4. Push the image to Docker Hub `docker new-repo:tagname`.
+
+## Useful commands
+1. Removing stopped containers
+    ```shell
+    docker rm  $(docker ps -q -a)
+    ```
+2. Running GUI applications - mount the socket for the X server as a Docker volume
+    ```shell
+    docker run -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=unix$DISPLAY TheImage
+    ```
+3. Running a PyQT GUI application
+
+    Firstly, add the following lines to your dockerfile to install the required packages
+    ```docker
+    RUN apt-get update
+    RUN apt-get install python3-pyqt5 -y
+    ```
+    Then use the following commands to run your image
+    ```shell
+    echo "allowing root to connect to the X server"
+    xhost local:root
+
+    echo "Disallowing QT to access shared memory"
+    export QT_X11_NO_MITSHM=1
+
+    echo "Running the image"
+    docker run -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=unix$DISPLAY TheImage
+    ```
+
+4. How to mount data from your local filesystem
+    ```shell
+    docker run --mount type=bind,source=/home/username/my-data,target=/mnt/my-data
+    ```
+
+5. Launch an interactive bash session
+    ```shell
+    docker run -it <image> bash
+    ```
 
 ## Further considerations
 By default, docker stores images in `/var`on linux.
