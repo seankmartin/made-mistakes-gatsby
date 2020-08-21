@@ -36,10 +36,10 @@ const WorksPage = ({ data }) => {
         <div className={style.content}>
           <div className={style.intro}>
             <p>
-              A selection of things I have developed and papers I have written.
+              A selection of projects I have developed and research I have performed.
             </p>
           </div>
-          <h2 className={style.subHeading}>
+          {/* <h2 className={style.subHeading}>
             <span>Featured work</span>
           </h2>
           <div className={style.gridList}>
@@ -61,22 +61,19 @@ const WorksPage = ({ data }) => {
                 />
               )
             })}
-          </div>
+          </div> */}
           <h2 className={style.subHeading}>
             <span>Research</span>
           </h2>
           <div className={style.gridList}>
             <html>
               <table>
+
                 <tr valign="top">
-                  <td align="right">[1]</td>
+                  <td align="right">[3]</td>
                   <td class="bibtexitem">
-                    Katja Zibrek, Sean Martin, and Rachel McDonnell. Is
-                    photorealism important for perception of expressive virtual
-                    humans in virtual reality? In{' '}
-                    <em>ACM Transactions on Applied Perception (TAP)</em>,
-                    16(3):1-19, 2019. [&nbsp;
-                    <a href="https://seankmartin.github.io/skm_bib.html#zibrek2019photorealism">
+                    Bethany&nbsp;E Frost, Matheus Cafalchio, Se&aacute;n&nbsp;K Martin, Md.&nbsp;Nurul Islam, John&nbsp;P Aggleton, and Shane&nbsp;M O’Mara. Spatial Coding in the Subiculum Requires Anterior Thalamic Inputs. <em>Preprint on bioRxiv</em> 2020. [&nbsp;
+                    <a href="../research/bib/#spatial-coding-in-the-subiculum-requires-anterior-thalamic-inputs">
                       bib
                     </a>
                     &nbsp;]
@@ -84,17 +81,10 @@ const WorksPage = ({ data }) => {
                 </tr>
 
                 <tr valign="top">
-                  <td align="right">[2]</td>
+                  <td align="right">[3]</td>
                   <td class="bibtexitem">
-                    Se&aacute;n Martin, Se&aacute;n Bruton, David Ganter, and
-                    Michael Manzke. Using a depth heuristic for light field
-                    volume rendering. In{' '}
-                    <em>
-                      14th International Conference on Computer Graphics Theory
-                      and Applications
-                    </em>
-                    , pages 134-144, 2019. [&nbsp;
-                    <a href="https://seankmartin.github.io/skm_bib.html#martin2019using">
+                    Se&aacute;n&nbsp;K Martin, Se&aacute;n Bruton, David Ganter, Michael Manzke. Synthesising Light Field Volume Visualisations Using Image Warping in Real-Time. In <em>Computer Vision, Imaging and Computer Graphics Theory and Applications</em> 2020. [&nbsp;
+                    <a href="../research/bib/#synthesising-light-field-volume-visualisations-using-image-warping-in-real-time">
                       bib
                     </a>
                     &nbsp;]
@@ -109,12 +99,56 @@ const WorksPage = ({ data }) => {
                     analyse the dynamics of neuronal encoding in freely-behaving
                     rodents in vivo. In <em>Wellcome Open Research</em>,
                     4(196):196, 2019. [&nbsp;
-                    <a href="https://seankmartin.github.io/skm_bib.html#islam2019neurochat">
+                    <a href="../research/bib/#neurochat-a-toolbox-to-analyse-the-dynamics-of-neuronal-encoding-in-freely-behaving-rodents-in-vivo">
                       bib
                     </a>
                     &nbsp;]
                   </td>
                 </tr>
+
+                <tr valign="top">
+                  <td align="right">[1]</td>
+                  <td class="bibtexitem">
+                    Katja Zibrek, Sean Martin, and Rachel McDonnell. Is
+                    photorealism important for perception of expressive virtual
+                    humans in virtual reality? In{' '}
+                    <em>ACM Transactions on Applied Perception (TAP)</em> 2019. [&nbsp;
+                    <a href="../research/bib/#is-photorealism-important-for-perception-of-expressive-virtual-humans-in-virtual-reality">
+                      bib
+                    </a>, <a href="https://figshare.com/articles/poster/The_Effect_of_Anterior_Thalamus_Lesions_on_Bursting_in_The_Subiculum/11568105">poster</a>
+                    &nbsp;]
+                  </td>
+                </tr>
+
+                <tr valign="top">
+                  <td align="right">[2]</td>
+                  <td class="bibtexitem">
+                    Se&aacute;n Martin, Se&aacute;n Bruton, David Ganter, and
+                    Michael Manzke. Using a depth heuristic for light field
+                    volume rendering. In{' '}
+                    <em>
+                      14th International Conference on Computer Graphics Theory
+                      and Applications
+                    </em> [&nbsp;
+                    <a href="../research/bib/#using-a-depth-heuristic-for-light-field-volume-rendering">
+                      bib
+                    </a>, paper
+                    &nbsp;]
+                  </td>
+                </tr>
+
+                <tr valign="top">
+                  <td align="right">[4]</td>
+                  <td class="bibtexitem">
+                    Se&aacute;n&nbsp;K Martin, Bethany&nbsp;E Frost, John&nbsp;P
+                    Aggleton, and Shane&nbsp;M O’Mara. The Effect of Anterior Thalamic Lesions on Bursting in the Subiculum. In <em>Bernstein Computational Neuroscience Conference</em> 2019. [&nbsp;
+                    <a href="../research/bib/#the-effect-of-anterior-thalamus-lesions-on-bursting-in-the-subiculum">
+                      bib
+                    </a>, <a href="https://figshare.com/articles/poster/The_Effect_of_Anterior_Thalamus_Lesions_on_Bursting_in_The_Subiculum/11568105">poster</a>
+                    &nbsp;]
+                  </td>
+                </tr>
+
               </table>
             </html>
           </div>
