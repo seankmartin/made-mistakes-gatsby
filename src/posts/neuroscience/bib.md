@@ -13,6 +13,7 @@ comments_locked: false
 ---
 
 ## NeuroChaT: A toolbox to analyse the dynamics of neuronal encoding in freely-behaving rodents in vivo
+The final authenticated version is available online at https://doi.org/10.12688/wellcomeopenres.15533.1.
 ```.bib
 @article{islam_neurochat_2019,
 	title = {{NeuroChaT}: {A} toolbox to analyse the dynamics of neuronal encoding in freely-behaving rodents in vivo},
@@ -32,6 +33,7 @@ comments_locked: false
 ```
 
 ## The effect of anterior thalamus lesions on bursting in the subiculum
+The poster is available online at https://doi.org/10.6084/m9.figshare.11568105.v1.
 ```.bib
 @inproceedings{martin_effect_2019,
 	title = {The {Effect} of {Anterior} {Thalamus} {Lesions} on {Bursting} in {The} {Subiculum}},
@@ -45,6 +47,7 @@ comments_locked: false
 ```
 
 ## Using a depth heuristic for light field volume rendering
+The final authenticated version is available online at https://doi.org/10.5220/0007574501340144.
 ```.bib
 @inproceedings{martin_using_2019,
 	title = {Using a {Depth} {Heuristic} for {Light} {Field} {Volume} {Rendering}},
@@ -61,6 +64,7 @@ comments_locked: false
 ```
 
 ## Synthesising light field volume visualisations using image warping in real-time
+The final authenticated version is available online at https://doi.org/10.1007/978-3-030-41590-7_2.
 ```.bib
 @inproceedings{martin_synthesising_2020,
 	address = {Cham},
@@ -80,6 +84,7 @@ comments_locked: false
 ```
 
 ## Spatial coding in the subiculum requires anterior thalamic inputs
+The preprint is available online at https://doi.org/10.1101/2020.01.31.928762.
 ```.bib
 @article{frost_spatial_2020,
 	title = {Spatial {Coding} in the {Subiculum} {Requires} {Anterior} {Thalamic} {Inputs}},
@@ -97,6 +102,7 @@ comments_locked: false
 ```
 
 ## Is photorealism important for perception of expressive virtual humans in virtual reality?
+The final authenticated version is available online at https://doi.org/10.1145/3349609.
 ```.bib
 @article{zibrek_is_2019,
 	title = {Is {Photorealism} {Important} for {Perception} of {Expressive} {Virtual} {Humans} in {Virtual} {Reality}?},

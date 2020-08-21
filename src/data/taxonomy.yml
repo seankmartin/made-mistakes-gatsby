@@ -31,6 +31,10 @@
   excerpt: Things about PC building, Operating systems, and more.
   html: <p>Things about PC building, Operating systems, and more.</p>
 
+- id: research
+  excerpt: Gaining knowledge to solve problems.
+  html: <p>Gaining knowledge to solve problems.</p>
+
 - id: neuroscience
   excerpt: Mysteries of the brain, according to the brain.
   html: <p>Mysteries of the brain, according to the brain.</p>

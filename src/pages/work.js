@@ -70,69 +70,37 @@ const WorksPage = ({ data }) => {
               <table>
 
                 <tr valign="top">
-                  <td align="right">[3]</td>
+                  <td align="right">[1]</td>
                   <td class="bibtexitem">
-                    Bethany&nbsp;E Frost, Matheus Cafalchio, Se&aacute;n&nbsp;K Martin, Md.&nbsp;Nurul Islam, John&nbsp;P Aggleton, and Shane&nbsp;M O’Mara. Spatial Coding in the Subiculum Requires Anterior Thalamic Inputs. <em>Preprint on bioRxiv</em> 2020. [&nbsp;
+                    Bethany&nbsp;E Frost, Matheus Cafalchio, Se&aacute;n&nbsp;K Martin, Md.&nbsp;Nurul Islam, John&nbsp;P Aggleton, and Shane&nbsp;M O’Mara. Spatial Coding in the Subiculum Requires Anterior Thalamic Inputs. <em>Preprint on bioRxiv</em>, 2020. [&nbsp;
                     <a href="../research/bib/#spatial-coding-in-the-subiculum-requires-anterior-thalamic-inputs">
                       bib
-                    </a>
+                    </a> | <a href="../papers/SpatialCodingInSub.pdf">pdf</a> | <a href="https://doi.org/10.1101/2020.01.31.928762">doi</a>
                     &nbsp;]
                   </td>
                 </tr>
-
+                
                 <tr valign="top">
-                  <td align="right">[3]</td>
-                  <td class="bibtexitem">
-                    Se&aacute;n&nbsp;K Martin, Se&aacute;n Bruton, David Ganter, Michael Manzke. Synthesising Light Field Volume Visualisations Using Image Warping in Real-Time. In <em>Computer Vision, Imaging and Computer Graphics Theory and Applications</em> 2020. [&nbsp;
-                    <a href="../research/bib/#synthesising-light-field-volume-visualisations-using-image-warping-in-real-time">
-                      bib
-                    </a>
-                    &nbsp;]
-                  </td>
-                </tr>
-
-                <tr valign="top">
-                  <td align="right">[3]</td>
+                  <td align="right">[2]</td>
                   <td class="bibtexitem">
                     Md&nbsp;Nurul Islam, Se&aacute;n&nbsp;K Martin, John&nbsp;P
                     Aggleton, and Shane&nbsp;M O’Mara. Neurochat: A toolbox to
                     analyse the dynamics of neuronal encoding in freely-behaving
-                    rodents in vivo. In <em>Wellcome Open Research</em>,
-                    4(196):196, 2019. [&nbsp;
+                    rodents in vivo. In <em>Wellcome Open Research</em>, 2019. [&nbsp;
                     <a href="../research/bib/#neurochat-a-toolbox-to-analyse-the-dynamics-of-neuronal-encoding-in-freely-behaving-rodents-in-vivo">
                       bib
-                    </a>
+                    </a> | <a href="../papers/NeuroChaT.pdf">pdf</a> | <a href="https://doi.org/10.12688/wellcomeopenres.15533.1">doi</a>
                     &nbsp;]
                   </td>
                 </tr>
 
                 <tr valign="top">
-                  <td align="right">[1]</td>
+                  <td align="right">[3]</td>
                   <td class="bibtexitem">
-                    Katja Zibrek, Sean Martin, and Rachel McDonnell. Is
-                    photorealism important for perception of expressive virtual
-                    humans in virtual reality? In{' '}
-                    <em>ACM Transactions on Applied Perception (TAP)</em> 2019. [&nbsp;
-                    <a href="../research/bib/#is-photorealism-important-for-perception-of-expressive-virtual-humans-in-virtual-reality">
+                    Se&aacute;n&nbsp;K Martin, Se&aacute;n Bruton, David Ganter, Michael Manzke. Synthesising Light Field Volume Visualisations Using Image Warping in Real-Time. In <em>Computer Vision, Imaging and Computer Graphics Theory and Applications</em>, 2020. [&nbsp;
+                    <a href="../research/bib/#synthesising-light-field-volume-visualisations-using-image-warping-in-real-time">
                       bib
-                    </a>, <a href="https://figshare.com/articles/poster/The_Effect_of_Anterior_Thalamus_Lesions_on_Bursting_in_The_Subiculum/11568105">poster</a>
-                    &nbsp;]
-                  </td>
-                </tr>
-
-                <tr valign="top">
-                  <td align="right">[2]</td>
-                  <td class="bibtexitem">
-                    Se&aacute;n Martin, Se&aacute;n Bruton, David Ganter, and
-                    Michael Manzke. Using a depth heuristic for light field
-                    volume rendering. In{' '}
-                    <em>
-                      14th International Conference on Computer Graphics Theory
-                      and Applications
-                    </em> [&nbsp;
-                    <a href="../research/bib/#using-a-depth-heuristic-for-light-field-volume-rendering">
-                      bib
-                    </a>, paper
+                    </a> | <a href="../papers/SynthesisingLightFields.pdf">pdf</a> | <a href="https://doi.org/10.1007/978-3-030-41590-7_2">doi</a>
                     &nbsp;]
                   </td>
                 </tr>
@@ -140,11 +108,42 @@ const WorksPage = ({ data }) => {
                 <tr valign="top">
                   <td align="right">[4]</td>
                   <td class="bibtexitem">
+                    Katja Zibrek, Sean Martin, and Rachel McDonnell. Is
+                    photorealism important for perception of expressive virtual
+                    humans in virtual reality? In{' '}
+                    <em>ACM Transactions on Applied Perception (TAP)</em>, 2019. [&nbsp;
+                    <a href="../research/bib/#is-photorealism-important-for-perception-of-expressive-virtual-humans-in-virtual-reality">
+                      bib
+                    </a> | <a href="../papers/Photorealism.pdf">pdf</a> | <a href="https://doi.org/10.1145/3349609">doi</a>
+                    &nbsp;]
+                  </td>
+                </tr>
+
+                <tr valign="top">
+                  <td align="right">[5]</td>
+                  <td class="bibtexitem">
+                    Se&aacute;n Martin, Se&aacute;n Bruton, David Ganter, and
+                    Michael Manzke. Using a depth heuristic for light field
+                    volume rendering. In{' '}
+                    <em>
+                      14th International Conference on Computer Graphics Theory
+                      and Applications
+                    </em>, 2019. [&nbsp;
+                    <a href="../research/bib/#using-a-depth-heuristic-for-light-field-volume-rendering">
+                      bib
+                    </a> | <a href="../papers/LFRendering.pdf">pdf</a> | <a href="https://doi.org/10.5220/0007574501340144">doi</a>
+                    &nbsp;]
+                  </td>
+                </tr>
+
+                <tr valign="top">
+                  <td align="right">[6]</td>
+                  <td class="bibtexitem">
                     Se&aacute;n&nbsp;K Martin, Bethany&nbsp;E Frost, John&nbsp;P
-                    Aggleton, and Shane&nbsp;M O’Mara. The Effect of Anterior Thalamic Lesions on Bursting in the Subiculum. In <em>Bernstein Computational Neuroscience Conference</em> 2019. [&nbsp;
+                    Aggleton, and Shane&nbsp;M O’Mara. The Effect of Anterior Thalamic Lesions on Bursting in the Subiculum. In <em>Bernstein Computational Neuroscience Conference</em>, 2019. [&nbsp;
                     <a href="../research/bib/#the-effect-of-anterior-thalamus-lesions-on-bursting-in-the-subiculum">
                       bib
-                    </a>, <a href="https://figshare.com/articles/poster/The_Effect_of_Anterior_Thalamus_Lesions_on_Bursting_in_The_Subiculum/11568105">poster</a>
+                    </a> | <a href="../papers/BernsteinPoster.pdf">pdf</a> | <a href="http://doi.org/10.12751/nncn.bc2019.0204">doi</a>
                     &nbsp;]
                   </td>
                 </tr>
