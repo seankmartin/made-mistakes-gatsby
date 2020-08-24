@@ -3,7 +3,7 @@ title: 'Example Python formatting and linting'
 excerpt: 'Make code look less bad.'
 date: 2020-07-02
 path: /python/formatting-example/
-image: ../../images/python_regius.jpg
+image: ../../images/python_code.jpg
 categories: [notes]
 tags: [python, coding]
 toc: true
@@ -133,3 +133,6 @@ my_code/ugly_python.py:10:1: F401 'math.floor' imported but unused
 ➜  Temp python3 -m pydocstyle my_code
 my_code/ugly_python.py:15 in public function `main`:
         D401: First line should be in imperative mood; try rephrasing (found 'This')
+```
+
+(<span><small>Photo by <a href="https://unsplash.com/@cdr6934?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Chris Ried</a> on <a href="https://unsplash.com/?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></small></span>)

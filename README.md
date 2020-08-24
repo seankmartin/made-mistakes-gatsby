@@ -57,6 +57,8 @@ with [Gatsby](https://www.gatsbyjs.org/), [Travis CI](https://travis-ci.org/),  
 
 ### Images
 Images for featured articles should be 1600 x 900 pixels.
+An easy way to obtain these is by using the Unsplash API. For example, like this: (random can replace featured)
+https://source.unsplash.com/featured/1600x900/?__keyword__
 
 ### Posts and Pages
 

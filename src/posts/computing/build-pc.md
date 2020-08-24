@@ -3,7 +3,7 @@ title: 'Building a Desktop PC.'
 excerpt: 'Picking parts and installation.'
 date: 2020-06-19
 path: /computing/build-a-pc/
-image: ../../images/keyboard.jpg
+image: ../../images/desk_pc.jpg
 categories: [notes]
 tags: [computing]
 toc: true
@@ -61,3 +61,5 @@ Download from [Ubuntu](https://ubuntu.com/download/desktop) and check the instal
 1. 32GB primary partition that mounts to / as ext4 at the start of the drive.
 2. ~1.5 to 2 times your RAM as SWAP partition that is at the end of the drive.
 3. All the rest of the drive can be ext4 logical partition that is mounted at /home.
+
+(<span><small>Photo by <a href="https://unsplash.com/@monty_films?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Rick Monteiro</a> on <a href="https://unsplash.com/s/photos/computer-tower?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></small></span>)

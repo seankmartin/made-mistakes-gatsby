@@ -3,7 +3,7 @@ title: 'Setting up Zotero.'
 excerpt: 'Settings for my favourite reference manager.'
 date: 2020-06-19
 path: /computing/zotero-setup/
-image: ../../images/keyboard.jpg
+image: ../../images/books.jpg
 categories: [notes]
 tags: [computing]
 toc: true
@@ -28,3 +28,5 @@ published: true
     5. Change to lower case to true.
     6. Max title length set to 120 characters.
 6. Install the Zotero connector for your web browser.
+
+(<span><small>Photo by <a href="https://unsplash.com/@kimberlyfarmer?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Kimberly Farmer</a> on <a href="https://unsplash.com/s/photos/books?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></small></span>)

@@ -3,7 +3,7 @@ title: 'Using the fman build system.'
 excerpt: 'How to build python code with fbs.'
 date: 2020-05-27
 path: /python/using-fbs/
-image: ../../images/python_regius.jpg
+image: ../../images/hammer.jpg
 categories: [notes]
 tags: [python, coding]
 toc: true
@@ -57,3 +57,5 @@ The fman build system comes with many great features, such as using the `get_res
 The build system has its own [troubleshooting guide](https://build-system.fman.io/troubleshooting). Here is an extra thing in case running the executable gives a [failed to execute script pyi-rth-pkgres](https://stackoverflow.com/questions/37815371/pyinstaller-failed-to-execute-script-pyi-rth-pkgres-and-missing-packages). There are many fixes available, but the easiest one when using fbs is to just add an unused import to your main file `import pkg_resources.py2_warn`. Usually you would add this as hidden import, but I'm not entirely sure how to do this in fbs.
 
 Also, don't forget that on Windows you need [NSIS](https://sourceforge.net/projects/nsis/) on PATH to create an installer.
+
+(<span><small>Photo by <a href="https://unsplash.com/@mphotographym?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Moritz Mentges</a> on <a href="https://unsplash.com/s/photos/hammer?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></small></span>)

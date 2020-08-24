@@ -1,10 +1,10 @@
 ---
 title: 'My Bibliography'
 path: /research/bib/
-date: 2020-05-26
-last_modified_at: 2020-07-08T15:13:24
+date: 2020-08-24
+last_modified_at: 2020-08-24T17:16:44
 excerpt: 'Research I have performed in bibtex format.'
-image: ../../images/keyboard.jpg
+image: ../../images/library.jpg
 categories: [notes]
 tags: [research]
 toc: true
@@ -120,3 +120,5 @@ The final authenticated version is available online at https://doi.org/10.1145/3
 	pages = {14:1--14:19},
 }
 ```
+
+(<span>Photo by <a href="https://unsplash.com/@thkelley?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Thomas Kelley</a> on <a href="https://unsplash.com/s/photos/bibliography?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>)
