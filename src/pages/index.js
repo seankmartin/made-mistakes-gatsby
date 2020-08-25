@@ -146,7 +146,7 @@ const HomePage = ({ data }) => {
                   key="faqs-home-link"
                   title="FAQ"
                   path="/faqs/"
-                  excerpt="<p>At the moment, its a placeholder.</p>"
+                  excerpt="<p>At the moment, it is a placeholder.</p>"
                 />
               </li>
               <li key="topics">
