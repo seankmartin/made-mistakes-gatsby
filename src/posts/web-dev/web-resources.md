@@ -21,3 +21,4 @@ featured: false
 - **Gatsby**: Build the website.
 - **Netlify**: Host the website built with Gatsby.
 - **Nice Humans**: Particular thanks to [Michael Rose](https://github.com/mmistakes/made-mistakes-gatsby) but overall a set of amazing tools, documentation, blog posts, books, talks etc. made this possible - thank you all!
+- **Travis CI**: Continuous integration of the website.
