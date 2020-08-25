@@ -55,3 +55,7 @@
   name: Work
   excerpt: A selection of things I have worked on.
   html: <p>A selection of things I have worked on</p>
+
+- id: review
+  except: Yearly reviews.
+  html: <p>Yearly reviews.</p>
