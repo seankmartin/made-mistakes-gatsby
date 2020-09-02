@@ -60,6 +60,10 @@ module.exports = {
         path: '/about/',
       },
       {
+        title: 'CV',
+        path: '/resume/',
+      },
+      {
         title: 'Contact',
         path: '/contact/',
       },

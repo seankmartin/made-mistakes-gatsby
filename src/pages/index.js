@@ -133,6 +133,22 @@ const HomePage = ({ data }) => {
                   excerpt="<p>A selection of things I've developed and written.</p>"
                 />
               </li>
+              <li key="About">
+                <Entry
+                  key="about-home-link"
+                  title="About"
+                  path="/about/"
+                  excerpt="<p>Find out about me.</p>"
+                />
+              </li>
+              <li key="CV">
+                <Entry
+                  key="cv-home-link"
+                  title="CV"
+                  path="/resume/"
+                  excerpt="<p>My Curriculum Vitae.</p>"
+                />
+              </li>
               <li key="contact">
                 <Entry
                   key="contact-home-link"

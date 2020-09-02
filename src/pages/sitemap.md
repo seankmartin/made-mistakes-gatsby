@@ -12,6 +12,7 @@ A hierarchical breakdown of all the sections and pages found on the site. For yo
 
 - [About](/about/)
 - [Contact](/contact/)
+- [Resume](/resume/)
 - [Frequently asked questions](/faqs/)
 - [Terms and policies](/terms/)
 - [Tag index](/tag/)
