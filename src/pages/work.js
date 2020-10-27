@@ -68,7 +68,7 @@ const WorksPage = ({ data }) => {
           </h2>
           <div className={style.gridList}>
             <html>
-              <p style="font-size:1.125rem">
+              <p style={{fontSize: "1.125rem"}}>
                 <table>
                   <tr valign="top">
                     <td align="right">[1]</td>
