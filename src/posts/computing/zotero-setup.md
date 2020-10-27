@@ -1,5 +1,5 @@
 ---
-title: 'Setting up Zotero.'
+title: 'Setting up Zotero'
 excerpt: 'Settings for my favourite reference manager.'
 date: 2020-06-19
 path: /computing/zotero-setup/

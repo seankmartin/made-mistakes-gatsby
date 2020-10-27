@@ -1,5 +1,5 @@
 ---
-title: 'Neural Data Analysis Resources.'
+title: 'Neural Data Analysis Resources'
 excerpt: 'Papers, researchers, journals, conferences, books, podcasts, websites, and more!'
 date: 2020-08-25
 path: /neuroscience/resources/
