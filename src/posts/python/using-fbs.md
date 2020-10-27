@@ -1,5 +1,5 @@
 ---
-title: 'Using the fman build system.'
+title: 'Using the fman build system'
 excerpt: 'How to build python code with fbs.'
 date: 2020-05-27
 path: /python/using-fbs/

@@ -31,7 +31,7 @@ const HomePage = ({ data }) => {
           <h1 className={style.heading}>
             <span>
               <a href="/about/">Se&aacute;n&nbsp;Martin's</a>
-              &nbsp;(very much) work in progress website.
+              &nbsp;(very much) work in progress website
             </span>
           </h1>
           <div className={style.intro}>

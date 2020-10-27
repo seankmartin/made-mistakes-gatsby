@@ -1,5 +1,5 @@
 ---
-title: 'Building a Desktop PC.'
+title: 'Building a Desktop PC'
 excerpt: 'Picking parts and installation.'
 date: 2020-06-19
 path: /computing/build-a-pc/
