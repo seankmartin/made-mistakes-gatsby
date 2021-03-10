@@ -73,10 +73,8 @@ const WorksPage = ({ data }) => {
                   <tr valign="top">
                     <td align="right">[1]</td>
                     <td class="bibtexitem">
-                      Bethany&nbsp;E Frost, Matheus Cafalchio,
-                      <b>Se&aacute;n&nbsp;K Martin</b>, Md.&nbsp;Nurul Islam,
-                      John&nbsp;P Aggleton, and Shane&nbsp;M O’Mara. Spatial
-                      Coding in the Subiculum Requires Anterior Thalamic Inputs.{' '}
+                      <b>Se&aacute;n&nbsp;K Martin</b>,
+                      John&nbsp;P Aggleton, and Shane&nbsp;M O’Mara. Can we conjointly record direct interactions between neurons in vivo in anatomically-connected brain areas? Probabilistic analyses and further implications.{' '}
                       <em>Preprint on bioRxiv</em>, 2020. [&nbsp;
                       <a href="../research/bib/#can-we-conjointly-record-direct-interactions-between-neurons-in-vivo-in-anatomically-connected-brain-areas-probabilistic-analyses-and-further-implications">
                         bib
