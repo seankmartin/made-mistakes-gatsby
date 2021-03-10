@@ -12,6 +12,24 @@ comments: false
 comments_locked: false
 ---
 
+## Can we conjointly record direct interactions between neurons in vivo in anatomically-connected brain areas? Probabilistic analyses and further implications
+```.bib
+@article{martin_can_2020,
+	title = {Can we conjointly record direct interactions between neurons in vivo in anatomically-connected brain areas? {Probabilistic} analyses and further implications},
+	copyright = {© 2020, Posted by Cold Spring Harbor Laboratory. This pre-print is available under a Creative Commons License (Attribution-NonCommercial-NoDerivs 4.0 International), CC BY-NC-ND 4.0, as described at http://creativecommons.org/licenses/by-nc-nd/4.0/},
+	shorttitle = {Can we conjointly record direct interactions between neurons in vivo in anatomically-connected brain areas?},
+	url = {https://www.biorxiv.org/content/10.1101/2020.12.07.415125v1},
+	doi = {10.1101/2020.12.07.415125},
+	language = {en},
+	urldate = {2021-03-10},
+	journal = {bioRxiv},
+	author = {Martin, Sean K. and Aggleton, John P. and O’Mara, Shane M.},
+	month = dec,
+	year = {2020},
+	pages = {2020.12.07.415125},
+}
+```
+
 ## NeuroChaT: A toolbox to analyse the dynamics of neuronal encoding in freely-behaving rodents in vivo
 The final authenticated version is available online at https://doi.org/10.12688/wellcomeopenres.15533.1.
 ```.bib

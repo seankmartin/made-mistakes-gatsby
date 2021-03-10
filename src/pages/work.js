@@ -68,13 +68,32 @@ const WorksPage = ({ data }) => {
           </h2>
           <div className={style.gridList}>
             <html>
-              <p style={{fontSize: "1.125rem"}}>
+              <p style={{ fontSize: '1.125rem' }}>
                 <table>
                   <tr valign="top">
                     <td align="right">[1]</td>
                     <td class="bibtexitem">
                       Bethany&nbsp;E Frost, Matheus Cafalchio,
-                      Se&aacute;n&nbsp;K Martin, Md.&nbsp;Nurul Islam,
+                      <b>Se&aacute;n&nbsp;K Martin</b>, Md.&nbsp;Nurul Islam,
+                      John&nbsp;P Aggleton, and Shane&nbsp;M O’Mara. Spatial
+                      Coding in the Subiculum Requires Anterior Thalamic Inputs.{' '}
+                      <em>Preprint on bioRxiv</em>, 2020. [&nbsp;
+                      <a href="../research/bib/#can-we-conjointly-record-direct-interactions-between-neurons-in-vivo-in-anatomically-connected-brain-areas-probabilistic-analyses-and-further-implications">
+                        bib
+                      </a>{' '}
+                      | <a href="../papers/ConjointRecordings.pdf">pdf</a> |{' '}
+                      <a href="https://doi.org/10.1101/2020.12.07.415125">
+                        doi
+                      </a>
+                      &nbsp;]
+                    </td>
+                  </tr>
+
+                  <tr valign="top">
+                    <td align="right">[2]</td>
+                    <td class="bibtexitem">
+                      Bethany&nbsp;E Frost, Matheus Cafalchio,
+                      <b>Se&aacute;n&nbsp;K Martin</b>, Md.&nbsp;Nurul Islam,
                       John&nbsp;P Aggleton, and Shane&nbsp;M O’Mara. Spatial
                       Coding in the Subiculum Requires Anterior Thalamic Inputs.{' '}
                       <em>Preprint on bioRxiv</em>, 2020. [&nbsp;
@@ -90,9 +109,9 @@ const WorksPage = ({ data }) => {
                   </tr>
 
                   <tr valign="top">
-                    <td align="right">[2]</td>
+                    <td align="right">[3]</td>
                     <td class="bibtexitem">
-                      Md&nbsp;Nurul Islam, Se&aacute;n&nbsp;K Martin,
+                      Md&nbsp;Nurul Islam, <b>Se&aacute;n&nbsp;K Martin</b>,
                       John&nbsp;P Aggleton, and Shane&nbsp;M O’Mara. Neurochat:
                       A toolbox to analyse the dynamics of neuronal encoding in
                       freely-behaving rodents in vivo. In{' '}
@@ -109,11 +128,11 @@ const WorksPage = ({ data }) => {
                   </tr>
 
                   <tr valign="top">
-                    <td align="right">[3]</td>
+                    <td align="right">[4]</td>
                     <td class="bibtexitem">
-                      Se&aacute;n&nbsp;K Martin, Se&aacute;n Bruton, David
-                      Ganter, Michael Manzke. Synthesising Light Field Volume
-                      Visualisations Using Image Warping in Real-Time. In{' '}
+                      <b>Se&aacute;n&nbsp;K Martin</b>, Se&aacute;n Bruton,
+                      David Ganter, Michael Manzke. Synthesising Light Field
+                      Volume Visualisations Using Image Warping in Real-Time. In{' '}
                       <em>
                         Computer Vision, Imaging and Computer Graphics Theory
                         and Applications
@@ -132,9 +151,9 @@ const WorksPage = ({ data }) => {
                   </tr>
 
                   <tr valign="top">
-                    <td align="right">[4]</td>
+                    <td align="right">[5]</td>
                     <td class="bibtexitem">
-                      Katja Zibrek, Sean Martin, and Rachel McDonnell. Is
+                      Katja Zibrek, <b>Sean Martin</b>, and Rachel McDonnell. Is
                       photorealism important for perception of expressive
                       virtual humans in virtual reality? In{' '}
                       <em>ACM Transactions on Applied Perception (TAP)</em>,
@@ -149,11 +168,11 @@ const WorksPage = ({ data }) => {
                   </tr>
 
                   <tr valign="top">
-                    <td align="right">[5]</td>
+                    <td align="right">[6]</td>
                     <td class="bibtexitem">
-                      Se&aacute;n Martin, Se&aacute;n Bruton, David Ganter, and
-                      Michael Manzke. Using a depth heuristic for light field
-                      volume rendering. In{' '}
+                      <b>Se&aacute;n Martin</b>, Se&aacute;n Bruton, David
+                      Ganter, and Michael Manzke. Using a depth heuristic for
+                      light field volume rendering. In{' '}
                       <em>
                         14th International Conference on Computer Graphics
                         Theory and Applications
@@ -169,9 +188,9 @@ const WorksPage = ({ data }) => {
                   </tr>
 
                   <tr valign="top">
-                    <td align="right">[6]</td>
+                    <td align="right">[7]</td>
                     <td class="bibtexitem">
-                      Se&aacute;n&nbsp;K Martin, Bethany&nbsp;E Frost,
+                      <b>Se&aacute;n&nbsp;K Martin</b>, Bethany&nbsp;E Frost,
                       John&nbsp;P Aggleton, and Shane&nbsp;M O’Mara. The Effect
                       of Anterior Thalamic Lesions on Bursting in the Subiculum.
                       In{' '}
