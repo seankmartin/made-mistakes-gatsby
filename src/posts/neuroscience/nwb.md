@@ -147,7 +147,7 @@ python -m pynwb.validate FILENAME.nwb
 
 ```Bash
 pip install nwbinspector
-nwbinspector path-to-nwbfile-or-directory-with-nwbfiles -o --log-file log-file-location --n-jobs -1
+nwbinspector path-to-nwbfile-or-directory-with-nwbfiles --overwrite --report-file-path log-file-location --n-jobs -1
 ```
 
 ## Viewing NWB files
