@@ -24,18 +24,24 @@ def downscale_image(
 if __name__ == "__main__":
     parser = argparse.ArgumentParser("Command line args")
     parser.add_argument(
-        "path", type=str, help="Path to the image or folder of images",
+        "path", type=str, help="Path to the image",
     )
     parser.add_argument(
         "--in_place", "-i", action="store_true", help="In-place resizing"
     )
+    parser.add_argument(
+        "--dest_x", "-x", type=int, help="Destination x size", default=1600
+    )
+    parser.add_argument(
+        "--dest_y", "-y", type=int, help="Destination y size", default=900
+    )
     parsed = parser.parse_args()
     image_path = parsed.path
     overwrite = parsed.in_place
+    x = parsed.dest_x
+    y = parsed.dest_y
     if os.path.isfile(image_path):
         image = Image.open(image_path)
-        downscale_image(image, source_res=None, overwrite=overwrite)
-    elif os.path.isdir(image_path):
-        downscale_folder(image_path)
+        downscale_image(image, source_res=None, dest_res=(x, y), overwrite=overwrite)
     else:
-        print("{} is not path or directory.".format(image_path))
+        print("{} is not valid path.".format(image_path))

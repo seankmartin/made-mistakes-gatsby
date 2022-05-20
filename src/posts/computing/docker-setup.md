@@ -126,5 +126,6 @@ sudo chmod 666 /var/run/docker.sock
 ## Further reading
 - Guides for using [TensorFlow](https://www.tensorflow.org/install/docker) and [PyTorch](https://medium.com/@zaher88abd/pytorch-with-docker-b791edd67850) with Docker.
 - [Bind mounts](https://docs.docker.com/storage/bind-mounts/) and [volumes](https://docs.docker.com/storage/volumes/) in Docker.
+- Move [Windows path to Docker data](https://blog.codetitans.pl/post/howto-docker-over-wsl2-location/) (why this is not an option from the program, I'm not sure!).
 
 (<span><small>Photo by <a href="https://unsplash.com/@tjholowaychuk?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Tj Holowaychuk</a> on <a href="https://unsplash.com/s/photos/dock?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></small></span>)
