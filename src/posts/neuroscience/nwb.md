@@ -135,6 +135,83 @@ ecephys_module.add(lfp)
 
 ```
 
+## Accessing NWB files
+
+Generally, data is accessed by:
+
+```Python
+# Step 0 - imports
+from pynwb import NWBHDF5IO
+io = NWBHDF5IO(filename, "r", manager=manager)
+nwbfile = io.read()
+
+item = nwbfile.NAME_OF_MODULE["NAME_OF_H1"]["NAME_OF_H2"]...
+data = item.data[:] # Usually transpose this with .T so that it is time x whatever
+# Or if item is a table
+df = item.to_dataframe()
+
+io.close()
+```
+
+## Adding analysis to NWB files
+
+The easiest way to do this is to copy the original file, and then add analysis or scratch data to it.
+The advantage of scratch data is that it can take any format, while analysis data must be an NWB type.
+The simplest NWB type to add is a table:
+
+```Python
+# Step 0. imports
+from hdmf.common import DynamicTable
+
+# Step 1. Optionally describe the columns in the table, like so
+def describe_columns():
+    return [
+        {"name": "label", "type": str, "doc": "label of electrode"},
+        {"name": "region", "type": str, "doc": "brain region of electrode"},
+        {"name": "frequency", "type": np.ndarray, "doc": "frequency values"},
+        {"name": "power", "type": np.ndarray, "doc": "power values in dB"},
+        {"name": "max_psd", "type": float, "doc": "maximum power value (uV)"},
+    ]
+
+# Step 2. Convert df
+hd_tab = DynamicTable.from_dataframe(
+    df=df, name=name, columns=describe_columns()
+)
+
+# Step 3. add to module
+mod = nwb.create_processing_module(name, description)
+mod.add(hd_tab)
+```
+
+To correctly write these files out, open the original file and new file as follows
+
+```Python
+from pynwb import NWBHDF5IO
+nwb_io = NWBHDF5IO(filename, "r")
+nwbfile = nwb_io.read()
+manager = nwb_io.manager
+copy_file = nwbfile.copy()
+
+### Add whatever to copy_file
+
+io_out = NWBHDF5IO(output_filename, "w", manager=manager)
+nwb_out.write(copy_file)
+
+io_out.write(nwb_out)
+```
+
+## Compressing stored data
+
+This only works for time series style data. Do as follows:
+
+```Python
+from hdmf.backends.hdf5.h5_utils import H5DataIO
+data : np.array = np.zeros(shape)
+compressed_data = H5DataIO(data=data, compression="gzip", compression_opts=4)
+nwb_ts = TimeSeries(data=compressed_data, ...)
+
+```
+
 ## Validating NWB files
 
 [Simple usage](https://pynwb.readthedocs.io/en/stable/validation.html#validating):
@@ -156,6 +233,8 @@ A simple way to view a NWB file is using [hdfview](https://www.hdfgroup.org/down
 
 A better way is to use the [NWB explorer](https://github.com/MetaCell/nwb-explorer) created by Metacell and UCL.
 The easiest way to use this is with docker by pulling the latest container from [google container](https://gcr.io/metacellllc/nwb-explorer).
+
+Another way to view is by using the [NWBwidgets](https://github.com/NeurodataWithoutBorders/nwb-jupyter-widgets) which is a Jupyter notebook feature.
 
 ## Further reading
 
