@@ -36,7 +36,7 @@ const HomePage = ({ data }) => {
           </h1>
           <div className={style.intro}>
             <p>
-              I'm a mathematician and computer scientist, and am currently a PhD student in Trinity College's Institute of Neuroscience. I enjoy fumbling through video games, roleplaying in dungeons and dragons, attempting piano, and messing about with all kinds of code - I mostly blog about the latter.
+              I'm a mathematician and computer scientist, and neuroscientist. I enjoy fumbling through video games, roleplaying in dungeons and dragons, attempting piano, and messing about with all kinds of code - I sometimes blog about the latter. Feel free to get in touch about anything you see here or for work enquiries.
             </p>
             <p>
               This site is built with Gatsby and made possible by the GitHub source code very kindly shared by Michael Rose, go check out his website <a href="https://mademistakes.com">Made Mistakes</a>.
