@@ -3,7 +3,7 @@ title: 'About Sean K. Martin'
 path: /about/
 date: 2020-05-26
 last_modified_at: 2020-05-26T15:03:14
-excerpt: 'Sean K. Martin is a PhD student in Trinity College Dublin studying Neuroscience.'
+excerpt: 'Sean K. Martin is a mathematician, computer scientist, and neuroscientist living in Zurich, Switzerland.'
 image: ../images/profile_cowboy.jpg
 ---
 
